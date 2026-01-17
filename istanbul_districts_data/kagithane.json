@@ -1,0 +1,67 @@
+{
+  "district_name": "Kağıthane",
+  "population": 454550,
+  "region": "Istanbul",
+  "data_source": "TUIK 2023 Est.",
+  "metrics": {
+    "daily_trips": 125927,
+    "traffic_density_score": 12
+  },
+  "lines": [
+    {
+      "line_code": "67K",
+      "route_type": "Normal",
+      "destination": "Adalar"
+    },
+    {
+      "line_code": "10K",
+      "route_type": "Normal",
+      "destination": "Sancaktepe"
+    },
+    {
+      "line_code": "12K",
+      "route_type": "Express",
+      "destination": "Beylikdüzü"
+    },
+    {
+      "line_code": "75K",
+      "route_type": "Normal",
+      "destination": "Küçükçekmece"
+    },
+    {
+      "line_code": "71K",
+      "route_type": "Normal",
+      "destination": "Şile"
+    },
+    {
+      "line_code": "91K",
+      "route_type": "Ring",
+      "destination": "Sultangazi"
+    },
+    {
+      "line_code": "72K",
+      "route_type": "Normal",
+      "destination": "Küçükçekmece"
+    },
+    {
+      "line_code": "17K",
+      "route_type": "Ring",
+      "destination": "Şile"
+    },
+    {
+      "line_code": "45K",
+      "route_type": "Express",
+      "destination": "Beşiktaş"
+    },
+    {
+      "line_code": "33K",
+      "route_type": "Ring",
+      "destination": "Çatalca"
+    },
+    {
+      "line_code": "11K",
+      "route_type": "Ring",
+      "destination": "Sarıyer"
+    }
+  ]
+}

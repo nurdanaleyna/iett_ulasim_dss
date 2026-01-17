@@ -1,0 +1,47 @@
+{
+  "district_name": "Güngören",
+  "population": 283083,
+  "region": "Istanbul",
+  "data_source": "TUIK 2023 Est.",
+  "metrics": {
+    "daily_trips": 77166,
+    "traffic_density_score": 89
+  },
+  "lines": [
+    {
+      "line_code": "98G",
+      "route_type": "Express",
+      "destination": "Kartal"
+    },
+    {
+      "line_code": "52G",
+      "route_type": "Ring",
+      "destination": "Büyükçekmece"
+    },
+    {
+      "line_code": "28G",
+      "route_type": "Express",
+      "destination": "Çekmeköy"
+    },
+    {
+      "line_code": "84G",
+      "route_type": "Normal",
+      "destination": "Şile"
+    },
+    {
+      "line_code": "34G",
+      "route_type": "Ring",
+      "destination": "Tuzla"
+    },
+    {
+      "line_code": "40G",
+      "route_type": "Express",
+      "destination": "Kartal"
+    },
+    {
+      "line_code": "54G",
+      "route_type": "Express",
+      "destination": "Pendik"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "district_name": "Esenler",
+  "population": 445421,
+  "region": "Istanbul",
+  "data_source": "TUIK 2023 Est.",
+  "metrics": {
+    "daily_trips": 124036,
+    "traffic_density_score": 97
+  },
+  "lines": [
+    {
+      "line_code": "38E",
+      "route_type": "Normal",
+      "destination": "Kartal"
+    },
+    {
+      "line_code": "60E",
+      "route_type": "Normal",
+      "destination": "Zeytinburnu"
+    },
+    {
+      "line_code": "47E",
+      "route_type": "Normal",
+      "destination": "Fatih"
+    },
+    {
+      "line_code": "30E",
+      "route_type": "Normal",
+      "destination": "Bahçelievler"
+    },
+    {
+      "line_code": "20E",
+      "route_type": "Ring",
+      "destination": "Sultangazi"
+    },
+    {
+      "line_code": "50E",
+      "route_type": "Express",
+      "destination": "Beylikdüzü"
+    },
+    {
+      "line_code": "71E",
+      "route_type": "Express",
+      "destination": "Beylikdüzü"
+    },
+    {
+      "line_code": "55E",
+      "route_type": "Ring",
+      "destination": "Çatalca"
+    },
+    {
+      "line_code": "52E",
+      "route_type": "Normal",
+      "destination": "Beylikdüzü"
+    },
+    {
+      "line_code": "96E",
+      "route_type": "Ring",
+      "destination": "Bahçelievler"
+    },
+    {
+      "line_code": "66E",
+      "route_type": "Ring",
+      "destination": "Eyüpsultan"
+    }
+  ]
+}

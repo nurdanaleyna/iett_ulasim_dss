@@ -1,0 +1,32 @@
+{
+  "district_name": "Çatalca",
+  "population": 76131,
+  "region": "Istanbul",
+  "data_source": "TUIK 2023 Est.",
+  "metrics": {
+    "daily_trips": 30178,
+    "traffic_density_score": 4
+  },
+  "lines": [
+    {
+      "line_code": "76Ç",
+      "route_type": "Ring",
+      "destination": "Büyükçekmece"
+    },
+    {
+      "line_code": "94Ç",
+      "route_type": "Normal",
+      "destination": "Beylikdüzü"
+    },
+    {
+      "line_code": "88Ç",
+      "route_type": "Ring",
+      "destination": "Kağıthane"
+    },
+    {
+      "line_code": "41Ç",
+      "route_type": "Ring",
+      "destination": "Avcılar"
+    }
+  ]
+}

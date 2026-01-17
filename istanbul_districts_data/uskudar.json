@@ -1,0 +1,77 @@
+{
+  "district_name": "Üsküdar",
+  "population": 525395,
+  "region": "Istanbul",
+  "data_source": "TUIK 2023 Est.",
+  "metrics": {
+    "daily_trips": 159532,
+    "traffic_density_score": 44
+  },
+  "lines": [
+    {
+      "line_code": "80Ü",
+      "route_type": "Express",
+      "destination": "Ataşehir"
+    },
+    {
+      "line_code": "23Ü",
+      "route_type": "Ring",
+      "destination": "Kağıthane"
+    },
+    {
+      "line_code": "38Ü",
+      "route_type": "Normal",
+      "destination": "Kadıköy"
+    },
+    {
+      "line_code": "14Ü",
+      "route_type": "Normal",
+      "destination": "Ataşehir"
+    },
+    {
+      "line_code": "60Ü",
+      "route_type": "Express",
+      "destination": "Sultangazi"
+    },
+    {
+      "line_code": "40Ü",
+      "route_type": "Normal",
+      "destination": "Zeytinburnu"
+    },
+    {
+      "line_code": "46Ü",
+      "route_type": "Express",
+      "destination": "Bayrampaşa"
+    },
+    {
+      "line_code": "32Ü",
+      "route_type": "Express",
+      "destination": "Bayrampaşa"
+    },
+    {
+      "line_code": "54Ü",
+      "route_type": "Express",
+      "destination": "Esenler"
+    },
+    {
+      "line_code": "26Ü",
+      "route_type": "Normal",
+      "destination": "Bayrampaşa"
+    },
+    {
+      "line_code": "42Ü",
+      "route_type": "Express",
+      "destination": "Zeytinburnu"
+    },
+    {
+      "line_code": "58Ü",
+      "route_type": "Normal",
+      "destination": "Gaziosmanpaşa"
+    },
+    {
+      "line_code": "46Ü",
+      "route_type": "Ring",
+      "destination": "Ataşehir"
+    }
+  ]
+}

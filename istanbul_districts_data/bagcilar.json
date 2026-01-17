@@ -1,0 +1,102 @@
+{
+  "district_name": "Bağcılar",
+  "population": 744351,
+  "region": "Istanbul",
+  "data_source": "TUIK 2023 Est.",
+  "metrics": {
+    "daily_trips": 202033,
+    "traffic_density_score": 7
+  },
+  "lines": [
+    {
+      "line_code": "89B",
+      "route_type": "Express",
+      "destination": "Güngören"
+    },
+    {
+      "line_code": "33B",
+      "route_type": "Normal",
+      "destination": "Silivri"
+    },
+    {
+      "line_code": "65B",
+      "route_type": "Normal",
+      "destination": "Kağıthane"
+    },
+    {
+      "line_code": "28B",
+      "route_type": "Express",
+      "destination": "Arnavutköy"
+    },
+    {
+      "line_code": "78B",
+      "route_type": "Express",
+      "destination": "Beşiktaş"
+    },
+    {
+      "line_code": "54B",
+      "route_type": "Ring",
+      "destination": "Eyüpsultan"
+    },
+    {
+      "line_code": "24B",
+      "route_type": "Express",
+      "destination": "Avcılar"
+    },
+    {
+      "line_code": "69B",
+      "route_type": "Normal",
+      "destination": "Pendik"
+    },
+    {
+      "line_code": "97B",
+      "route_type": "Normal",
+      "destination": "Avcılar"
+    },
+    {
+      "line_code": "67B",
+      "route_type": "Normal",
+      "destination": "Çatalca"
+    },
+    {
+      "line_code": "27B",
+      "route_type": "Normal",
+      "destination": "Pendik"
+    },
+    {
+      "line_code": "40B",
+      "route_type": "Ring",
+      "destination": "Adalar"
+    },
+    {
+      "line_code": "33B",
+      "route_type": "Express",
+      "destination": "Ümraniye"
+    },
+    {
+      "line_code": "16B",
+      "route_type": "Normal",
+      "destination": "Beşiktaş"
+    },
+    {
+      "line_code": "76B",
+      "route_type": "Ring",
+      "destination": "Adalar"
+    },
+    {
+      "line_code": "78B",
+      "route_type": "Express",
+      "destination": "Şile"
+    },
+    {
+      "line_code": "94B",
+      "route_type": "Normal",
+      "destination": "Şile"
+    },
+    {
+      "line_code": "19B",
+      "route_type": "Express",
+      "destination": "Küçükçekmece"
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "district_name": "Beykoz",
+  "population": 248595,
+  "region": "Istanbul",
+  "data_source": "TUIK 2023 Est.",
+  "metrics": {
+    "daily_trips": 83619,
+    "traffic_density_score": 44
+  },
+  "lines": [
+    {
+      "line_code": "30B",
+      "route_type": "Normal",
+      "destination": "Bahçelievler"
+    },
+    {
+      "line_code": "40B",
+      "route_type": "Ring",
+      "destination": "Sultanbeyli"
+    },
+    {
+      "line_code": "48B",
+      "route_type": "Express",
+      "destination": "Kartal"
+    },
+    {
+      "line_code": "31B",
+      "route_type": "Normal",
+      "destination": "Sarıyer"
+    },
+    {
+      "line_code": "26B",
+      "route_type": "Express",
+      "destination": "Güngören"
+    },
+    {
+      "line_code": "23B",
+      "route_type": "Express",
+      "destination": "Zeytinburnu"
+    }
+  ]
+}

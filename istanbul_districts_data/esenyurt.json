@@ -1,0 +1,132 @@
+{
+  "district_name": "Esenyurt",
+  "population": 978007,
+  "region": "Istanbul",
+  "data_source": "TUIK 2023 Est.",
+  "metrics": {
+    "daily_trips": 281365,
+    "traffic_density_score": 28
+  },
+  "lines": [
+    {
+      "line_code": "38E",
+      "route_type": "Ring",
+      "destination": "Güngören"
+    },
+    {
+      "line_code": "17E",
+      "route_type": "Ring",
+      "destination": "Bayrampaşa"
+    },
+    {
+      "line_code": "52E",
+      "route_type": "Ring",
+      "destination": "Kağıthane"
+    },
+    {
+      "line_code": "64E",
+      "route_type": "Ring",
+      "destination": "Tuzla"
+    },
+    {
+      "line_code": "10E",
+      "route_type": "Ring",
+      "destination": "Güngören"
+    },
+    {
+      "line_code": "42E",
+      "route_type": "Ring",
+      "destination": "Küçükçekmece"
+    },
+    {
+      "line_code": "17E",
+      "route_type": "Normal",
+      "destination": "Adalar"
+    },
+    {
+      "line_code": "64E",
+      "route_type": "Ring",
+      "destination": "Büyükçekmece"
+    },
+    {
+      "line_code": "74E",
+      "route_type": "Normal",
+      "destination": "Kartal"
+    },
+    {
+      "line_code": "70E",
+      "route_type": "Ring",
+      "destination": "Eyüpsultan"
+    },
+    {
+      "line_code": "71E",
+      "route_type": "Normal",
+      "destination": "Eyüpsultan"
+    },
+    {
+      "line_code": "58E",
+      "route_type": "Express",
+      "destination": "Sancaktepe"
+    },
+    {
+      "line_code": "70E",
+      "route_type": "Express",
+      "destination": "Büyükçekmece"
+    },
+    {
+      "line_code": "45E",
+      "route_type": "Ring",
+      "destination": "Silivri"
+    },
+    {
+      "line_code": "37E",
+      "route_type": "Normal",
+      "destination": "Esenler"
+    },
+    {
+      "line_code": "91E",
+      "route_type": "Normal",
+      "destination": "Güngören"
+    },
+    {
+      "line_code": "31E",
+      "route_type": "Normal",
+      "destination": "Maltepe"
+    },
+    {
+      "line_code": "39E",
+      "route_type": "Ring",
+      "destination": "Esenler"
+    },
+    {
+      "line_code": "42E",
+      "route_type": "Ring",
+      "destination": "Sarıyer"
+    },
+    {
+      "line_code": "83E",
+      "route_type": "Ring",
+      "destination": "Esenler"
+    },
+    {
+      "line_code": "16E",
+      "route_type": "Ring",
+      "destination": "Arnavutköy"
+    },
+    {
+      "line_code": "27E",
+      "route_type": "Express",
+      "destination": "Bayrampaşa"
+    },
+    {
+      "line_code": "41E",
+      "route_type": "Normal",
+      "destination": "Pendik"
+    },
+    {
+      "line_code": "13E",
+      "route_type": "Ring",
+      "destination": "Fatih"
+    }
+  ]
+}

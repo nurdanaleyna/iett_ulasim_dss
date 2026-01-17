@@ -1,0 +1,47 @@
+{
+  "district_name": "Tuzla",
+  "population": 284443,
+  "region": "Istanbul",
+  "data_source": "TUIK 2023 Est.",
+  "metrics": {
+    "daily_trips": 84780,
+    "traffic_density_score": 13
+  },
+  "lines": [
+    {
+      "line_code": "84T",
+      "route_type": "Express",
+      "destination": "Eyüpsultan"
+    },
+    {
+      "line_code": "53T",
+      "route_type": "Normal",
+      "destination": "Kadıköy"
+    },
+    {
+      "line_code": "37T",
+      "route_type": "Express",
+      "destination": "Zeytinburnu"
+    },
+    {
+      "line_code": "77T",
+      "route_type": "Ring",
+      "destination": "Sarıyer"
+    },
+    {
+      "line_code": "69T",
+      "route_type": "Express",
+      "destination": "Fatih"
+    },
+    {
+      "line_code": "94T",
+      "route_type": "Ring",
+      "destination": "Kağıthane"
+    },
+    {
+      "line_code": "96T",
+      "route_type": "Express",
+      "destination": "Sultangazi"
+    }
+  ]
+}

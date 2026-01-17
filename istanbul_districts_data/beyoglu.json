@@ -1,0 +1,37 @@
+{
+  "district_name": "Beyoğlu",
+  "population": 225940,
+  "region": "Istanbul",
+  "data_source": "TUIK 2023 Est.",
+  "metrics": {
+    "daily_trips": 69637,
+    "traffic_density_score": 81
+  },
+  "lines": [
+    {
+      "line_code": "53B",
+      "route_type": "Ring",
+      "destination": "Gaziosmanpaşa"
+    },
+    {
+      "line_code": "14B",
+      "route_type": "Normal",
+      "destination": "Kadıköy"
+    },
+    {
+      "line_code": "25B",
+      "route_type": "Ring",
+      "destination": "Küçükçekmece"
+    },
+    {
+      "line_code": "85B",
+      "route_type": "Express",
+      "destination": "Bağcılar"
+    },
+    {
+      "line_code": "91B",
+      "route_type": "Ring",
+      "destination": "Sancaktepe"
+    }
+  ]
+}

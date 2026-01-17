@@ -1,0 +1,27 @@
+{
+  "district_name": "Adalar",
+  "population": 16372,
+  "region": "Istanbul",
+  "data_source": "TUIK 2023 Est.",
+  "metrics": {
+    "daily_trips": 5140,
+    "traffic_density_score": 21
+  },
+  "lines": [
+    {
+      "line_code": "89A",
+      "route_type": "Express",
+      "destination": "Bakırköy"
+    },
+    {
+      "line_code": "58A",
+      "route_type": "Normal",
+      "destination": "Kağıthane"
+    },
+    {
+      "line_code": "57A",
+      "route_type": "Express",
+      "destination": "Üsküdar"
+    }
+  ]
+}

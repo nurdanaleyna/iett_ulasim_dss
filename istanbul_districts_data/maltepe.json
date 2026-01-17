@@ -1,0 +1,77 @@
+{
+  "district_name": "Maltepe",
+  "population": 525566,
+  "region": "Istanbul",
+  "data_source": "TUIK 2023 Est.",
+  "metrics": {
+    "daily_trips": 186908,
+    "traffic_density_score": 58
+  },
+  "lines": [
+    {
+      "line_code": "63M",
+      "route_type": "Ring",
+      "destination": "Bayrampaşa"
+    },
+    {
+      "line_code": "22M",
+      "route_type": "Express",
+      "destination": "Şile"
+    },
+    {
+      "line_code": "29M",
+      "route_type": "Normal",
+      "destination": "Güngören"
+    },
+    {
+      "line_code": "11M",
+      "route_type": "Ring",
+      "destination": "Şişli"
+    },
+    {
+      "line_code": "73M",
+      "route_type": "Normal",
+      "destination": "Ümraniye"
+    },
+    {
+      "line_code": "34M",
+      "route_type": "Ring",
+      "destination": "Arnavutköy"
+    },
+    {
+      "line_code": "35M",
+      "route_type": "Express",
+      "destination": "Zeytinburnu"
+    },
+    {
+      "line_code": "42M",
+      "route_type": "Normal",
+      "destination": "Sultanbeyli"
+    },
+    {
+      "line_code": "74M",
+      "route_type": "Express",
+      "destination": "Kağıthane"
+    },
+    {
+      "line_code": "65M",
+      "route_type": "Express",
+      "destination": "Bağcılar"
+    },
+    {
+      "line_code": "86M",
+      "route_type": "Express",
+      "destination": "Tuzla"
+    },
+    {
+      "line_code": "88M",
+      "route_type": "Ring",
+      "destination": "Esenler"
+    },
+    {
+      "line_code": "92M",
+      "route_type": "Express",
+      "destination": "Küçükçekmece"
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "district_name": "Bahçelievler",
+  "population": 605300,
+  "region": "Istanbul",
+  "data_source": "TUIK 2023 Est.",
+  "metrics": {
+    "daily_trips": 170927,
+    "traffic_density_score": 29
+  },
+  "lines": [
+    {
+      "line_code": "25B",
+      "route_type": "Normal",
+      "destination": "Çekmeköy"
+    },
+    {
+      "line_code": "30B",
+      "route_type": "Express",
+      "destination": "Arnavutköy"
+    },
+    {
+      "line_code": "67B",
+      "route_type": "Normal",
+      "destination": "Tuzla"
+    },
+    {
+      "line_code": "39B",
+      "route_type": "Normal",
+      "destination": "Maltepe"
+    },
+    {
+      "line_code": "79B",
+      "route_type": "Ring",
+      "destination": "Esenyurt"
+    },
+    {
+      "line_code": "28B",
+      "route_type": "Express",
+      "destination": "Zeytinburnu"
+    },
+    {
+      "line_code": "20B",
+      "route_type": "Normal",
+      "destination": "Kadıköy"
+    },
+    {
+      "line_code": "39B",
+      "route_type": "Ring",
+      "destination": "Gaziosmanpaşa"
+    },
+    {
+      "line_code": "51B",
+      "route_type": "Ring",
+      "destination": "Bayrampaşa"
+    },
+    {
+      "line_code": "51B",
+      "route_type": "Normal",
+      "destination": "Şile"
+    },
+    {
+      "line_code": "94B",
+      "route_type": "Ring",
+      "destination": "Çekmeköy"
+    },
+    {
+      "line_code": "44B",
+      "route_type": "Ring",
+      "destination": "Şişli"
+    },
+    {
+      "line_code": "93B",
+      "route_type": "Normal",
+      "destination": "Beylikdüzü"
+    },
+    {
+      "line_code": "19B",
+      "route_type": "Normal",
+      "destination": "Şile"
+    },
+    {
+      "line_code": "37B",
+      "route_type": "Express",
+      "destination": "Eyüpsultan"
+    }
+  ]
+}

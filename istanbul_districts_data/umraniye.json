@@ -1,0 +1,102 @@
+{
+  "district_name": "Ümraniye",
+  "population": 726758,
+  "region": "Istanbul",
+  "data_source": "TUIK 2023 Est.",
+  "metrics": {
+    "daily_trips": 287348,
+    "traffic_density_score": 28
+  },
+  "lines": [
+    {
+      "line_code": "87Ü",
+      "route_type": "Ring",
+      "destination": "Çatalca"
+    },
+    {
+      "line_code": "73Ü",
+      "route_type": "Express",
+      "destination": "Şile"
+    },
+    {
+      "line_code": "41Ü",
+      "route_type": "Express",
+      "destination": "Sarıyer"
+    },
+    {
+      "line_code": "41Ü",
+      "route_type": "Express",
+      "destination": "Kadıköy"
+    },
+    {
+      "line_code": "64Ü",
+      "route_type": "Express",
+      "destination": "Kartal"
+    },
+    {
+      "line_code": "37Ü",
+      "route_type": "Normal",
+      "destination": "Beyoğlu"
+    },
+    {
+      "line_code": "52Ü",
+      "route_type": "Express",
+      "destination": "Tuzla"
+    },
+    {
+      "line_code": "32Ü",
+      "route_type": "Normal",
+      "destination": "Esenler"
+    },
+    {
+      "line_code": "65Ü",
+      "route_type": "Express",
+      "destination": "Pendik"
+    },
+    {
+      "line_code": "66Ü",
+      "route_type": "Ring",
+      "destination": "Üsküdar"
+    },
+    {
+      "line_code": "91Ü",
+      "route_type": "Normal",
+      "destination": "Maltepe"
+    },
+    {
+      "line_code": "44Ü",
+      "route_type": "Express",
+      "destination": "Fatih"
+    },
+    {
+      "line_code": "63Ü",
+      "route_type": "Ring",
+      "destination": "Adalar"
+    },
+    {
+      "line_code": "51Ü",
+      "route_type": "Ring",
+      "destination": "Bakırköy"
+    },
+    {
+      "line_code": "87Ü",
+      "route_type": "Express",
+      "destination": "Güngören"
+    },
+    {
+      "line_code": "56Ü",
+      "route_type": "Express",
+      "destination": "Beykoz"
+    },
+    {
+      "line_code": "62Ü",
+      "route_type": "Normal",
+      "destination": "Beylikdüzü"
+    },
+    {
+      "line_code": "16Ü",
+      "route_type": "Express",
+      "destination": "Kartal"
+    }
+  ]
+}

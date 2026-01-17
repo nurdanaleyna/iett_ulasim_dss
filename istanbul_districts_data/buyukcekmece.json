@@ -1,0 +1,42 @@
+{
+  "district_name": "Büyükçekmece",
+  "population": 269160,
+  "region": "Istanbul",
+  "data_source": "TUIK 2023 Est.",
+  "metrics": {
+    "daily_trips": 103575,
+    "traffic_density_score": 78
+  },
+  "lines": [
+    {
+      "line_code": "48B",
+      "route_type": "Express",
+      "destination": "Ataşehir"
+    },
+    {
+      "line_code": "26B",
+      "route_type": "Normal",
+      "destination": "Silivri"
+    },
+    {
+      "line_code": "45B",
+      "route_type": "Express",
+      "destination": "Şişli"
+    },
+    {
+      "line_code": "12B",
+      "route_type": "Ring",
+      "destination": "Beyoğlu"
+    },
+    {
+      "line_code": "88B",
+      "route_type": "Ring",
+      "destination": "Esenyurt"
+    },
+    {
+      "line_code": "65B",
+      "route_type": "Express",
+      "destination": "Beyoğlu"
+    }
+  ]
+}

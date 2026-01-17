@@ -1,0 +1,52 @@
+{
+  "district_name": "Sultanbeyli",
+  "population": 358201,
+  "region": "Istanbul",
+  "data_source": "TUIK 2023 Est.",
+  "metrics": {
+    "daily_trips": 99356,
+    "traffic_density_score": 53
+  },
+  "lines": [
+    {
+      "line_code": "25S",
+      "route_type": "Express",
+      "destination": "Esenler"
+    },
+    {
+      "line_code": "96S",
+      "route_type": "Express",
+      "destination": "Sarıyer"
+    },
+    {
+      "line_code": "48S",
+      "route_type": "Express",
+      "destination": "Zeytinburnu"
+    },
+    {
+      "line_code": "10S",
+      "route_type": "Normal",
+      "destination": "Çekmeköy"
+    },
+    {
+      "line_code": "24S",
+      "route_type": "Express",
+      "destination": "Sancaktepe"
+    },
+    {
+      "line_code": "23S",
+      "route_type": "Normal",
+      "destination": "Güngören"
+    },
+    {
+      "line_code": "70S",
+      "route_type": "Express",
+      "destination": "Fatih"
+    },
+    {
+      "line_code": "62S",
+      "route_type": "Ring",
+      "destination": "Tuzla"
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "district_name": "Sarıyer",
+  "population": 349968,
+  "region": "Istanbul",
+  "data_source": "TUIK 2023 Est.",
+  "metrics": {
+    "daily_trips": 135264,
+    "traffic_density_score": 7
+  },
+  "lines": [
+    {
+      "line_code": "94S",
+      "route_type": "Express",
+      "destination": "Bayrampaşa"
+    },
+    {
+      "line_code": "36S",
+      "route_type": "Normal",
+      "destination": "Sultanbeyli"
+    },
+    {
+      "line_code": "35S",
+      "route_type": "Express",
+      "destination": "Esenyurt"
+    },
+    {
+      "line_code": "32S",
+      "route_type": "Express",
+      "destination": "Kağıthane"
+    },
+    {
+      "line_code": "12S",
+      "route_type": "Express",
+      "destination": "Gaziosmanpaşa"
+    },
+    {
+      "line_code": "16S",
+      "route_type": "Normal",
+      "destination": "Beyoğlu"
+    },
+    {
+      "line_code": "91S",
+      "route_type": "Express",
+      "destination": "Avcılar"
+    },
+    {
+      "line_code": "41S",
+      "route_type": "Ring",
+      "destination": "Şişli"
+    }
+  ]
+}

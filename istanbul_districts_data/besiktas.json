@@ -1,0 +1,32 @@
+{
+  "district_name": "Beşiktaş",
+  "population": 178938,
+  "region": "Istanbul",
+  "data_source": "TUIK 2023 Est.",
+  "metrics": {
+    "daily_trips": 50363,
+    "traffic_density_score": 21
+  },
+  "lines": [
+    {
+      "line_code": "41B",
+      "route_type": "Normal",
+      "destination": "Çatalca"
+    },
+    {
+      "line_code": "94B",
+      "route_type": "Normal",
+      "destination": "Esenyurt"
+    },
+    {
+      "line_code": "86B",
+      "route_type": "Normal",
+      "destination": "Sarıyer"
+    },
+    {
+      "line_code": "92B",
+      "route_type": "Ring",
+      "destination": "Arnavutköy"
+    }
+  ]
+}

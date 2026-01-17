@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İETT Hat Analizleri</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 3px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 text-slate-800">
+
+    <div class="flex h-screen overflow-hidden">
+
+        <!-- Sidebar -->
+        <aside class="w-[260px] bg-slate-900 text-white flex flex-col flex-shrink-0 z-40 h-full">
+
+            <!-- Logo Area -->
+            <div class="h-[70px] flex items-center justify-center border-b border-slate-700">
+                <h4 class="m-0 font-bold text-cyan-400 text-xl flex items-center">
+                    <i class="fas fa-bus text-cyan-400 mr-2"></i> İETT DSS
+                </h4>
+            </div>
+
+            <!-- Menu Links -->
+            <nav class="flex-1 overflow-y-auto py-4">
+
+                <!-- Link 1: Dashboard -->
+                <a href="/dashboard"
+                    class="flex items-center px-4 py-3 mb-2 text-slate-400 hover:bg-slate-800 transition-colors cursor-pointer group">
+                    <i
+                        class="fas fa-chart-pie text-xl w-[25px] text-center group-hover:text-white transition-colors"></i>
+                    <span class="ml-3 font-medium">Dashboard</span>
+                </a>
+
+                <!-- Link 2: Hat Analizleri (ACTIVE) -->
+                <a href="/line-analysis"
+                    class="flex items-center px-4 py-3 mb-2 text-cyan-400 bg-slate-800 border-r-4 border-cyan-400 cursor-pointer">
+                    <i class="fas fa-route text-xl w-[25px] text-center"></i>
+                    <span class="ml-3 font-medium">Hat Analizleri</span>
+                </a>
+
+                <!-- Link 3: Stratejik Analiz -->
+                <a href="/strategic-analysis"
+                    class="flex items-center px-4 py-3 mb-2 text-slate-400 hover:bg-slate-800 transition-colors cursor-pointer group">
+                    <i
+                        class="fas fa-chess-rook text-xl w-[25px] text-center group-hover:text-white transition-colors"></i>
+                    <span class="ml-3 font-medium">Stratejik Analiz</span>
+                </a>
+
+            </nav>
+
+            <!-- Profile Section -->
+            <div class="p-4 border-t border-slate-700 bg-slate-800">
+                <div class="flex items-center">
+                    <div
+                        class="w-10 h-10 rounded-full bg-cyan-900 text-cyan-300 flex items-center justify-center text-sm font-bold shadow-lg">
+                        YM
+                    </div>
+                    <div class="ml-3">
+                        <p class="text-sm font-bold text-white">Yönetici Modu</p>
+                        <p class="text-xs text-slate-400">Strateji Dairesi</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main id="mainContent" class="flex-1 flex flex-col overflow-hidden bg-slate-50 relative">
+
+            <!-- Header -->
+            <header class="bg-white shadow-sm border-b border-slate-200 z-30 sticky top-0 flex-shrink-0">
+                <div class="px-8 py-4 flex justify-between items-center bg-white">
+                    <div class="flex items-center">
+                        <div>
+                            <h1 class="text-2xl font-black text-slate-800 tracking-tight uppercase">İETT Hat Analizleri
+                            </h1>
+                            <p class="text-xs font-bold text-slate-400 mt-1 uppercase tracking-wider">Operasyonel
+                                Detaylar
+                            </p>
+                        </div>
+                    </div>
+                    <div class="text-sm text-gray-500 font-medium">
+                        20 Aralık 2025 Cumartesi
+                    </div>
+                </div>
+            </header>
+
+            <!-- Content -->
+            <div class="flex-1 overflow-y-auto p-8 space-y-8 pb-20">
+
+                <!-- Placeholder Content -->
+                <div class="bg-white rounded-2xl shadow-sm border border-slate-100 p-12 text-center">
+                    <div class="inline-flex items-center justify-center w-20 h-20 rounded-full bg-slate-100 mb-6">
+                        <i class="fas fa-route text-4xl text-slate-400"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-2">Hat Analiz Paneli Hazırlanıyor</h3>
+                    <p class="text-slate-500">Bu sayfada hat bazlı sefer, yolcu ve performans verileri
+                        görüntülenecektir.</p>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+</body>
+
+</html>

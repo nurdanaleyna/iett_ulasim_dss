@@ -1,0 +1,102 @@
+{
+  "district_name": "Pendik",
+  "population": 741895,
+  "region": "Istanbul",
+  "data_source": "TUIK 2023 Est.",
+  "metrics": {
+    "daily_trips": 197239,
+    "traffic_density_score": 91
+  },
+  "lines": [
+    {
+      "line_code": "47P",
+      "route_type": "Express",
+      "destination": "Eyüpsultan"
+    },
+    {
+      "line_code": "26P",
+      "route_type": "Normal",
+      "destination": "Güngören"
+    },
+    {
+      "line_code": "71P",
+      "route_type": "Normal",
+      "destination": "Beykoz"
+    },
+    {
+      "line_code": "68P",
+      "route_type": "Normal",
+      "destination": "Bayrampaşa"
+    },
+    {
+      "line_code": "13P",
+      "route_type": "Normal",
+      "destination": "Çekmeköy"
+    },
+    {
+      "line_code": "19P",
+      "route_type": "Express",
+      "destination": "Beylikdüzü"
+    },
+    {
+      "line_code": "83P",
+      "route_type": "Ring",
+      "destination": "Kartal"
+    },
+    {
+      "line_code": "83P",
+      "route_type": "Express",
+      "destination": "Gaziosmanpaşa"
+    },
+    {
+      "line_code": "24P",
+      "route_type": "Ring",
+      "destination": "Sarıyer"
+    },
+    {
+      "line_code": "60P",
+      "route_type": "Normal",
+      "destination": "Başakşehir"
+    },
+    {
+      "line_code": "68P",
+      "route_type": "Ring",
+      "destination": "Esenyurt"
+    },
+    {
+      "line_code": "57P",
+      "route_type": "Normal",
+      "destination": "Şişli"
+    },
+    {
+      "line_code": "81P",
+      "route_type": "Ring",
+      "destination": "Bağcılar"
+    },
+    {
+      "line_code": "93P",
+      "route_type": "Ring",
+      "destination": "Fatih"
+    },
+    {
+      "line_code": "12P",
+      "route_type": "Express",
+      "destination": "Kartal"
+    },
+    {
+      "line_code": "42P",
+      "route_type": "Ring",
+      "destination": "Avcılar"
+    },
+    {
+      "line_code": "36P",
+      "route_type": "Normal",
+      "destination": "Avcılar"
+    },
+    {
+      "line_code": "67P",
+      "route_type": "Ring",
+      "destination": "Zeytinburnu"
+    }
+  ]
+}

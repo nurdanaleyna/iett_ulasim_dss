@@ -1,0 +1,62 @@
+{
+  "district_name": "Ataşehir",
+  "population": 422594,
+  "region": "Istanbul",
+  "data_source": "TUIK 2023 Est.",
+  "metrics": {
+    "daily_trips": 118242,
+    "traffic_density_score": 30
+  },
+  "lines": [
+    {
+      "line_code": "84A",
+      "route_type": "Ring",
+      "destination": "Sarıyer"
+    },
+    {
+      "line_code": "70A",
+      "route_type": "Ring",
+      "destination": "Tuzla"
+    },
+    {
+      "line_code": "21A",
+      "route_type": "Ring",
+      "destination": "Kadıköy"
+    },
+    {
+      "line_code": "90A",
+      "route_type": "Normal",
+      "destination": "Sancaktepe"
+    },
+    {
+      "line_code": "42A",
+      "route_type": "Express",
+      "destination": "Avcılar"
+    },
+    {
+      "line_code": "45A",
+      "route_type": "Ring",
+      "destination": "Sancaktepe"
+    },
+    {
+      "line_code": "96A",
+      "route_type": "Ring",
+      "destination": "Beylikdüzü"
+    },
+    {
+      "line_code": "33A",
+      "route_type": "Express",
+      "destination": "Bağcılar"
+    },
+    {
+      "line_code": "97A",
+      "route_type": "Ring",
+      "destination": "Fatih"
+    },
+    {
+      "line_code": "79A",
+      "route_type": "Normal",
+      "destination": "Tuzla"
+    }
+  ]
+}

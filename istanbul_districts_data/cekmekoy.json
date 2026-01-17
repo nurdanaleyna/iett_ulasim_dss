@@ -1,0 +1,47 @@
+{
+  "district_name": "Çekmeköy",
+  "population": 283185,
+  "region": "Istanbul",
+  "data_source": "TUIK 2023 Est.",
+  "metrics": {
+    "daily_trips": 79715,
+    "traffic_density_score": 36
+  },
+  "lines": [
+    {
+      "line_code": "20Ç",
+      "route_type": "Ring",
+      "destination": "Arnavutköy"
+    },
+    {
+      "line_code": "15Ç",
+      "route_type": "Normal",
+      "destination": "Sultangazi"
+    },
+    {
+      "line_code": "20Ç",
+      "route_type": "Express",
+      "destination": "Ümraniye"
+    },
+    {
+      "line_code": "39Ç",
+      "route_type": "Normal",
+      "destination": "Zeytinburnu"
+    },
+    {
+      "line_code": "95Ç",
+      "route_type": "Normal",
+      "destination": "Sarıyer"
+    },
+    {
+      "line_code": "39Ç",
+      "route_type": "Express",
+      "destination": "Arnavutköy"
+    },
+    {
+      "line_code": "36Ç",
+      "route_type": "Express",
+      "destination": "Zeytinburnu"
+    }
+  ]
+}

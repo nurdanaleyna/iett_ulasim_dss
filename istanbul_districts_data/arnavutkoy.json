@@ -1,0 +1,47 @@
+{
+  "district_name": "Arnavutköy",
+  "population": 312023,
+  "region": "Istanbul",
+  "data_source": "TUIK 2023 Est.",
+  "metrics": {
+    "daily_trips": 118121,
+    "traffic_density_score": 86
+  },
+  "lines": [
+    {
+      "line_code": "76A",
+      "route_type": "Normal",
+      "destination": "Kadıköy"
+    },
+    {
+      "line_code": "65A",
+      "route_type": "Ring",
+      "destination": "Adalar"
+    },
+    {
+      "line_code": "57A",
+      "route_type": "Ring",
+      "destination": "Avcılar"
+    },
+    {
+      "line_code": "96A",
+      "route_type": "Express",
+      "destination": "Çekmeköy"
+    },
+    {
+      "line_code": "48A",
+      "route_type": "Express",
+      "destination": "Beşiktaş"
+    },
+    {
+      "line_code": "19A",
+      "route_type": "Normal",
+      "destination": "Güngören"
+    },
+    {
+      "line_code": "53A",
+      "route_type": "Normal",
+      "destination": "Eyüpsultan"
+    }
+  ]
+}

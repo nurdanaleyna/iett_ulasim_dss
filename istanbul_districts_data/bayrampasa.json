@@ -1,0 +1,42 @@
+{
+  "district_name": "Bayrampaşa",
+  "population": 274884,
+  "region": "Istanbul",
+  "data_source": "TUIK 2023 Est.",
+  "metrics": {
+    "daily_trips": 87096,
+    "traffic_density_score": 15
+  },
+  "lines": [
+    {
+      "line_code": "68B",
+      "route_type": "Express",
+      "destination": "Bağcılar"
+    },
+    {
+      "line_code": "85B",
+      "route_type": "Ring",
+      "destination": "Zeytinburnu"
+    },
+    {
+      "line_code": "56B",
+      "route_type": "Express",
+      "destination": "Bakırköy"
+    },
+    {
+      "line_code": "16B",
+      "route_type": "Normal",
+      "destination": "Beykoz"
+    },
+    {
+      "line_code": "98B",
+      "route_type": "Normal",
+      "destination": "Başakşehir"
+    },
+    {
+      "line_code": "39B",
+      "route_type": "Normal",
+      "destination": "Fatih"
+    }
+  ]
+}

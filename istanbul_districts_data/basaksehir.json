@@ -1,0 +1,72 @@
+{
+  "district_name": "Başakşehir",
+  "population": 519964,
+  "region": "Istanbul",
+  "data_source": "TUIK 2023 Est.",
+  "metrics": {
+    "daily_trips": 131284,
+    "traffic_density_score": 69
+  },
+  "lines": [
+    {
+      "line_code": "38B",
+      "route_type": "Ring",
+      "destination": "Beykoz"
+    },
+    {
+      "line_code": "36B",
+      "route_type": "Express",
+      "destination": "Bahçelievler"
+    },
+    {
+      "line_code": "75B",
+      "route_type": "Express",
+      "destination": "Şile"
+    },
+    {
+      "line_code": "36B",
+      "route_type": "Normal",
+      "destination": "Gaziosmanpaşa"
+    },
+    {
+      "line_code": "31B",
+      "route_type": "Normal",
+      "destination": "Zeytinburnu"
+    },
+    {
+      "line_code": "20B",
+      "route_type": "Express",
+      "destination": "Çatalca"
+    },
+    {
+      "line_code": "10B",
+      "route_type": "Normal",
+      "destination": "Sancaktepe"
+    },
+    {
+      "line_code": "58B",
+      "route_type": "Ring",
+      "destination": "Kadıköy"
+    },
+    {
+      "line_code": "52B",
+      "route_type": "Ring",
+      "destination": "Zeytinburnu"
+    },
+    {
+      "line_code": "96B",
+      "route_type": "Normal",
+      "destination": "Beşiktaş"
+    },
+    {
+      "line_code": "21B",
+      "route_type": "Ring",
+      "destination": "Çatalca"
+    },
+    {
+      "line_code": "73B",
+      "route_type": "Ring",
+      "destination": "Gaziosmanpaşa"
+    }
+  ]
+}

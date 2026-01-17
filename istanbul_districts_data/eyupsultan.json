@@ -1,0 +1,62 @@
+{
+  "district_name": "Eyüpsultan",
+  "population": 423879,
+  "region": "Istanbul",
+  "data_source": "TUIK 2023 Est.",
+  "metrics": {
+    "daily_trips": 154074,
+    "traffic_density_score": 71
+  },
+  "lines": [
+    {
+      "line_code": "78E",
+      "route_type": "Express",
+      "destination": "Avcılar"
+    },
+    {
+      "line_code": "71E",
+      "route_type": "Normal",
+      "destination": "Sancaktepe"
+    },
+    {
+      "line_code": "40E",
+      "route_type": "Express",
+      "destination": "Ümraniye"
+    },
+    {
+      "line_code": "59E",
+      "route_type": "Ring",
+      "destination": "Tuzla"
+    },
+    {
+      "line_code": "34E",
+      "route_type": "Ring",
+      "destination": "Gaziosmanpaşa"
+    },
+    {
+      "line_code": "19E",
+      "route_type": "Normal",
+      "destination": "Kağıthane"
+    },
+    {
+      "line_code": "52E",
+      "route_type": "Ring",
+      "destination": "Tuzla"
+    },
+    {
+      "line_code": "69E",
+      "route_type": "Normal",
+      "destination": "Esenyurt"
+    },
+    {
+      "line_code": "51E",
+      "route_type": "Normal",
+      "destination": "Adalar"
+    },
+    {
+      "line_code": "20E",
+      "route_type": "Ring",
+      "destination": "Arnavutköy"
+    }
+  ]
+}

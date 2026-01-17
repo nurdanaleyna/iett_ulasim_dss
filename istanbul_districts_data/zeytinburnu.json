@@ -1,0 +1,47 @@
+{
+  "district_name": "Zeytinburnu",
+  "population": 293839,
+  "region": "Istanbul",
+  "data_source": "TUIK 2023 Est.",
+  "metrics": {
+    "daily_trips": 90670,
+    "traffic_density_score": 67
+  },
+  "lines": [
+    {
+      "line_code": "64Z",
+      "route_type": "Normal",
+      "destination": "Ümraniye"
+    },
+    {
+      "line_code": "17Z",
+      "route_type": "Normal",
+      "destination": "Avcılar"
+    },
+    {
+      "line_code": "87Z",
+      "route_type": "Express",
+      "destination": "Bakırköy"
+    },
+    {
+      "line_code": "88Z",
+      "route_type": "Normal",
+      "destination": "Büyükçekmece"
+    },
+    {
+      "line_code": "90Z",
+      "route_type": "Normal",
+      "destination": "Ataşehir"
+    },
+    {
+      "line_code": "13Z",
+      "route_type": "Ring",
+      "destination": "Pendik"
+    },
+    {
+      "line_code": "44Z",
+      "route_type": "Ring",
+      "destination": "Arnavutköy"
+    }
+  ]
+}

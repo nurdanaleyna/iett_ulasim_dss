@@ -1,0 +1,72 @@
+{
+  "district_name": "Kadıköy",
+  "population": 485233,
+  "region": "Istanbul",
+  "data_source": "TUIK 2023 Est.",
+  "metrics": {
+    "daily_trips": 181978,
+    "traffic_density_score": 41
+  },
+  "lines": [
+    {
+      "line_code": "86K",
+      "route_type": "Normal",
+      "destination": "Avcılar"
+    },
+    {
+      "line_code": "99K",
+      "route_type": "Express",
+      "destination": "Maltepe"
+    },
+    {
+      "line_code": "84K",
+      "route_type": "Normal",
+      "destination": "Arnavutköy"
+    },
+    {
+      "line_code": "83K",
+      "route_type": "Ring",
+      "destination": "Bayrampaşa"
+    },
+    {
+      "line_code": "35K",
+      "route_type": "Express",
+      "destination": "Fatih"
+    },
+    {
+      "line_code": "50K",
+      "route_type": "Ring",
+      "destination": "Bağcılar"
+    },
+    {
+      "line_code": "51K",
+      "route_type": "Normal",
+      "destination": "Şişli"
+    },
+    {
+      "line_code": "40K",
+      "route_type": "Normal",
+      "destination": "Maltepe"
+    },
+    {
+      "line_code": "76K",
+      "route_type": "Normal",
+      "destination": "Ümraniye"
+    },
+    {
+      "line_code": "21K",
+      "route_type": "Ring",
+      "destination": "Sancaktepe"
+    },
+    {
+      "line_code": "37K",
+      "route_type": "Normal",
+      "destination": "Arnavutköy"
+    },
+    {
+      "line_code": "49K",
+      "route_type": "Ring",
+      "destination": "Silivri"
+    }
+  ]
+}

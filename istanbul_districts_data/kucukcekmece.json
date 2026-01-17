@@ -1,0 +1,112 @@
+{
+  "district_name": "Küçükçekmece",
+  "population": 805930,
+  "region": "Istanbul",
+  "data_source": "TUIK 2023 Est.",
+  "metrics": {
+    "daily_trips": 296555,
+    "traffic_density_score": 67
+  },
+  "lines": [
+    {
+      "line_code": "55K",
+      "route_type": "Ring",
+      "destination": "Sultangazi"
+    },
+    {
+      "line_code": "27K",
+      "route_type": "Normal",
+      "destination": "Eyüpsultan"
+    },
+    {
+      "line_code": "93K",
+      "route_type": "Ring",
+      "destination": "Büyükçekmece"
+    },
+    {
+      "line_code": "66K",
+      "route_type": "Normal",
+      "destination": "Sultangazi"
+    },
+    {
+      "line_code": "87K",
+      "route_type": "Ring",
+      "destination": "Şile"
+    },
+    {
+      "line_code": "45K",
+      "route_type": "Ring",
+      "destination": "Beylikdüzü"
+    },
+    {
+      "line_code": "90K",
+      "route_type": "Ring",
+      "destination": "Bakırköy"
+    },
+    {
+      "line_code": "38K",
+      "route_type": "Ring",
+      "destination": "Sancaktepe"
+    },
+    {
+      "line_code": "34K",
+      "route_type": "Express",
+      "destination": "Sarıyer"
+    },
+    {
+      "line_code": "10K",
+      "route_type": "Normal",
+      "destination": "Çatalca"
+    },
+    {
+      "line_code": "95K",
+      "route_type": "Normal",
+      "destination": "Esenler"
+    },
+    {
+      "line_code": "44K",
+      "route_type": "Express",
+      "destination": "Beyoğlu"
+    },
+    {
+      "line_code": "71K",
+      "route_type": "Express",
+      "destination": "Sultangazi"
+    },
+    {
+      "line_code": "92K",
+      "route_type": "Express",
+      "destination": "Beylikdüzü"
+    },
+    {
+      "line_code": "55K",
+      "route_type": "Ring",
+      "destination": "Beyoğlu"
+    },
+    {
+      "line_code": "44K",
+      "route_type": "Normal",
+      "destination": "Sarıyer"
+    },
+    {
+      "line_code": "39K",
+      "route_type": "Ring",
+      "destination": "Ataşehir"
+    },
+    {
+      "line_code": "95K",
+      "route_type": "Normal",
+      "destination": "Büyükçekmece"
+    },
+    {
+      "line_code": "20K",
+      "route_type": "Normal",
+      "destination": "Tuzla"
+    },
+    {
+      "line_code": "33K",
+      "route_type": "Normal",
+      "destination": "Kağıthane"
+    }
+  ]
+}

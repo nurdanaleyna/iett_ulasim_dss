@@ -1,0 +1,77 @@
+{
+  "district_name": "Sultangazi",
+  "population": 543380,
+  "region": "Istanbul",
+  "data_source": "TUIK 2023 Est.",
+  "metrics": {
+    "daily_trips": 184342,
+    "traffic_density_score": 35
+  },
+  "lines": [
+    {
+      "line_code": "70S",
+      "route_type": "Ring",
+      "destination": "Ataşehir"
+    },
+    {
+      "line_code": "56S",
+      "route_type": "Express",
+      "destination": "Sancaktepe"
+    },
+    {
+      "line_code": "28S",
+      "route_type": "Normal",
+      "destination": "Bahçelievler"
+    },
+    {
+      "line_code": "63S",
+      "route_type": "Ring",
+      "destination": "Kadıköy"
+    },
+    {
+      "line_code": "89S",
+      "route_type": "Normal",
+      "destination": "Fatih"
+    },
+    {
+      "line_code": "93S",
+      "route_type": "Normal",
+      "destination": "Bakırköy"
+    },
+    {
+      "line_code": "55S",
+      "route_type": "Normal",
+      "destination": "Bayrampaşa"
+    },
+    {
+      "line_code": "25S",
+      "route_type": "Ring",
+      "destination": "Beyoğlu"
+    },
+    {
+      "line_code": "71S",
+      "route_type": "Normal",
+      "destination": "Kadıköy"
+    },
+    {
+      "line_code": "78S",
+      "route_type": "Ring",
+      "destination": "Kağıthane"
+    },
+    {
+      "line_code": "50S",
+      "route_type": "Ring",
+      "destination": "Adalar"
+    },
+    {
+      "line_code": "47S",
+      "route_type": "Ring",
+      "destination": "Sancaktepe"
+    },
+    {
+      "line_code": "24S",
+      "route_type": "Ring",
+      "destination": "Adalar"
+    }
+  ]
+}

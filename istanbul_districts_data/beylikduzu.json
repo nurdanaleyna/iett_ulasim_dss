@@ -1,0 +1,57 @@
+{
+  "district_name": "Beylikdüzü",
+  "population": 398840,
+  "region": "Istanbul",
+  "data_source": "TUIK 2023 Est.",
+  "metrics": {
+    "daily_trips": 143752,
+    "traffic_density_score": 74
+  },
+  "lines": [
+    {
+      "line_code": "97B",
+      "route_type": "Ring",
+      "destination": "Büyükçekmece"
+    },
+    {
+      "line_code": "75B",
+      "route_type": "Ring",
+      "destination": "Bayrampaşa"
+    },
+    {
+      "line_code": "18B",
+      "route_type": "Express",
+      "destination": "Ümraniye"
+    },
+    {
+      "line_code": "34B",
+      "route_type": "Express",
+      "destination": "Sultangazi"
+    },
+    {
+      "line_code": "93B",
+      "route_type": "Ring",
+      "destination": "Şile"
+    },
+    {
+      "line_code": "93B",
+      "route_type": "Normal",
+      "destination": "Sultangazi"
+    },
+    {
+      "line_code": "11B",
+      "route_type": "Ring",
+      "destination": "Ataşehir"
+    },
+    {
+      "line_code": "72B",
+      "route_type": "Normal",
+      "destination": "Üsküdar"
+    },
+    {
+      "line_code": "25B",
+      "route_type": "Express",
+      "destination": "Sarıyer"
+    }
+  ]
+}

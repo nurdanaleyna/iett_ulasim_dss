@@ -1,0 +1,42 @@
+{
+  "district_name": "Şişli",
+  "population": 276528,
+  "region": "Istanbul",
+  "data_source": "TUIK 2023 Est.",
+  "metrics": {
+    "daily_trips": 87550,
+    "traffic_density_score": 19
+  },
+  "lines": [
+    {
+      "line_code": "57Ş",
+      "route_type": "Normal",
+      "destination": "Çekmeköy"
+    },
+    {
+      "line_code": "53Ş",
+      "route_type": "Normal",
+      "destination": "Başakşehir"
+    },
+    {
+      "line_code": "37Ş",
+      "route_type": "Ring",
+      "destination": "Avcılar"
+    },
+    {
+      "line_code": "50Ş",
+      "route_type": "Normal",
+      "destination": "Sultanbeyli"
+    },
+    {
+      "line_code": "18Ş",
+      "route_type": "Ring",
+      "destination": "Ataşehir"
+    },
+    {
+      "line_code": "76Ş",
+      "route_type": "Normal",
+      "destination": "Kadıköy"
+    }
+  ]
+}

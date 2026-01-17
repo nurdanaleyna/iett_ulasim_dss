@@ -1,0 +1,72 @@
+{
+  "district_name": "Kartal",
+  "population": 480738,
+  "region": "Istanbul",
+  "data_source": "TUIK 2023 Est.",
+  "metrics": {
+    "daily_trips": 158115,
+    "traffic_density_score": 81
+  },
+  "lines": [
+    {
+      "line_code": "91K",
+      "route_type": "Express",
+      "destination": "Çekmeköy"
+    },
+    {
+      "line_code": "89K",
+      "route_type": "Ring",
+      "destination": "Ümraniye"
+    },
+    {
+      "line_code": "82K",
+      "route_type": "Ring",
+      "destination": "Güngören"
+    },
+    {
+      "line_code": "74K",
+      "route_type": "Ring",
+      "destination": "Maltepe"
+    },
+    {
+      "line_code": "35K",
+      "route_type": "Ring",
+      "destination": "Bayrampaşa"
+    },
+    {
+      "line_code": "73K",
+      "route_type": "Express",
+      "destination": "Esenler"
+    },
+    {
+      "line_code": "58K",
+      "route_type": "Normal",
+      "destination": "Bakırköy"
+    },
+    {
+      "line_code": "29K",
+      "route_type": "Normal",
+      "destination": "Pendik"
+    },
+    {
+      "line_code": "53K",
+      "route_type": "Ring",
+      "destination": "Sarıyer"
+    },
+    {
+      "line_code": "52K",
+      "route_type": "Normal",
+      "destination": "Başakşehir"
+    },
+    {
+      "line_code": "49K",
+      "route_type": "Normal",
+      "destination": "Güngören"
+    },
+    {
+      "line_code": "77K",
+      "route_type": "Normal",
+      "destination": "Üsküdar"
+    }
+  ]
+}

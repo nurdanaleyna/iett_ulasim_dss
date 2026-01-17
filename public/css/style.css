@@ -1,0 +1,241 @@
+:root {
+    --main-bg-color: #f7f9fc;
+    --primary-color: #0093d6;
+    /* IETT Blue-ish */
+    --secondary-color: #d1e7f3;
+    --text-color: #2c3e50;
+    --sidebar-width: 17rem;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--main-bg-color);
+    color: var(--text-color);
+    overflow-x: hidden;
+}
+
+#wrapper {
+    overflow-x: hidden;
+}
+
+#sidebar-wrapper {
+    min-height: 100vh;
+    margin-left: -17rem;
+    transition: margin 0.25s ease-out;
+    width: var(--sidebar-width);
+    background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%) !important;
+}
+
+#sidebar-wrapper .sidebar-heading {
+    padding: 0.875rem 1.25rem;
+    font-size: 1.2rem;
+}
+
+#sidebar-wrapper .list-group {
+    width: var(--sidebar-width);
+}
+
+#page-content-wrapper {
+    width: 100%;
+    transition: margin 0.25s ease-out;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+    margin-left: 0;
+}
+
+#menu-toggle {
+    cursor: pointer;
+}
+
+.primary-text {
+    color: var(--primary-color);
+}
+
+.second-text {
+    color: #b0b8c1;
+}
+
+.active {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    color: #fff !important;
+    border-left: 4px solid var(--primary-color);
+}
+
+.list-group-item {
+    border: none;
+    padding: 20px 30px;
+}
+
+.list-group-item:hover {
+    color: #fff !important;
+    background-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+.card {
+    border: none;
+    border-radius: 12px;
+}
+
+.rounded-full {
+    border-radius: 50%;
+}
+
+.secondary-bg {
+    background-color: var(--secondary-color);
+}
+
+/* Traffic Light Rows */
+.row-critical {
+    background-color: rgba(220, 53, 69, 0.15) !important;
+    /* Red tint */
+}
+
+.row-warning {
+    background-color: rgba(255, 193, 7, 0.15) !important;
+    /* Yellow tint */
+}
+
+.row-stable {
+    background-color: #ffffff;
+}
+
+/* Status Badges */
+.badge-status {
+    padding: 0.5em 0.8em;
+    font-weight: 600;
+    border-radius: 20px;
+    font-size: 0.85em;
+}
+
+.bg-critical {
+    background-color: #ffe6e6;
+    color: #cc0000;
+}
+
+.bg-optimize {
+    background-color: #fff4e5;
+    color: #e67e22;
+}
+
+.bg-stable {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+}
+
+.bg-inefficient {
+    background-color: #fce4ec;
+    /* Pinkish */
+    color: #c2185b;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+tr {
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+/* Enhanced KPI Cards */
+.kpi-card {
+    transition: transform 0.2s;
+    border-left: 5px solid transparent;
+}
+
+.kpi-card:hover {
+    transform: translateY(-5px);
+}
+
+.kpi-border-blue {
+    border-left-color: var(--primary-color);
+}
+
+.kpi-border-red {
+    border-left-color: #dc3545;
+}
+
+.kpi-border-green {
+    border-left-color: #28a745;
+}
+
+.kpi-border-orange {
+    border-left-color: #fd7e14;
+}
+
+/* Events Widget */
+.event-list-item {
+    border-left: 4px solid transparent;
+    background: #f8f9fa;
+    margin-bottom: 0.5rem;
+    padding: 0.75rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.event-warning {
+    border-left-color: #ffc107;
+}
+
+.event-danger {
+    border-left-color: #dc3545;
+}
+
+.event-info {
+    border-left-color: #17a2b8;
+}
+
+/* Leaflet Legend */
+.legend {
+    line-height: 18px;
+    color: #555;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.legend i {
+    width: 18px;
+    height: 18px;
+    float: left;
+    margin-right: 8px;
+    opacity: 0.8;
+}
+
+/* Button Group Active States Fix */
+.btn-group .btn-outline-danger.active,
+.btn-group .btn-outline-danger:active {
+    background-color: #dc3545 !important;
+    color: white !important;
+    border-color: #dc3545 !important;
+}
+
+.btn-group .btn-outline-warning.active,
+.btn-group .btn-outline-warning:active {
+    background-color: #ffc107 !important;
+    color: #212529 !important;
+    border-color: #ffc107 !important;
+}
+
+.btn-group .btn-outline-success.active,
+.btn-group .btn-outline-success:active {
+    background-color: #198754 !important;
+    color: white !important;
+    border-color: #198754 !important;
+}
+
+.btn-group .btn-outline-secondary.active,
+.btn-group .btn-outline-secondary:active {
+    background-color: #6c757d !important;
+    color: white !important;
+}

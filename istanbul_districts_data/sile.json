@@ -1,0 +1,27 @@
+{
+  "district_name": "Şile",
+  "population": 41627,
+  "region": "Istanbul",
+  "data_source": "TUIK 2023 Est.",
+  "metrics": {
+    "daily_trips": 15048,
+    "traffic_density_score": 83
+  },
+  "lines": [
+    {
+      "line_code": "26Ş",
+      "route_type": "Ring",
+      "destination": "Eyüpsultan"
+    },
+    {
+      "line_code": "77Ş",
+      "route_type": "Ring",
+      "destination": "Tuzla"
+    },
+    {
+      "line_code": "22Ş",
+      "route_type": "Normal",
+      "destination": "Sultanbeyli"
+    }
+  ]
+}

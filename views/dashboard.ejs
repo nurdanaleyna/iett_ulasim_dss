@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İstanbul Ulaşım DSS</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+    <div class="d-flex" id="wrapper">
+        <!-- Sidebar -->
+        <div class="bg-dark text-white" id="sidebar-wrapper">
+            <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom">
+                <i class="fas fa-bus me-2"></i>İETT DSS
+            </div>
+            <div class="list-group list-group-flush my-3">
+                <a href="/dashboard" id="nav-dashboard"
+                    class="list-group-item list-group-item-action bg-transparent second-text active">
+                    <i class="fas fa-tachometer-alt me-2"></i>Dashboard
+                </a>
+                <a href="/line-analysis" id="nav-lines"
+                    class="list-group-item list-group-item-action bg-transparent second-text">
+                    <i class="fas fa-chart-line me-2"></i>Hat Analizleri
+                </a>
+
+                <a href="/strategic-analysis"
+                    class="list-group-item list-group-item-action bg-transparent second-text text-danger fw-bold">
+                    <i class="fas fa-chess me-2"></i>Stratejik Analiz
+                </a>
+
+            </div>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <nav
+                class="navbar navbar-expand-lg navbar-light bg-light py-4 px-4 border-bottom d-flex justify-content-between">
+                <div class="d-flex align-items-center">
+                    <i class="fas fa-align-left primary-text fs-4 me-3" id="menu-toggle"></i>
+                    <h2 class="fs-2 m-0">Verimlilik ve Karar Destek Sistemi</h2>
+                </div>
+                <div id="header-clock" class="fs-5 text-secondary fw-bold"></div>
+            </nav>
+
+            <div class="container-fluid px-4">
+                <!-- SECTIONS -->
+
+                <!-- 1. DASHBOARD VIEW -->
+                <section id="view-dashboard">
+                    <!-- KPI Cards -->
+                    <div class="row g-3 my-2" id="kpi-container">
+                        <!-- Cards injected via JS -->
+                        <div class="col-md-3">
+                            <div
+                                class="p-3 bg-white shadow kpi-card kpi-border-blue d-flex justify-content-around align-items-center rounded">
+                                <div>
+                                    <h3 class="fs-2 mb-0" id="kpi-total-lines">-</h3>
+                                    <p class="fs-5 text-muted mb-0">Toplam Hat</p>
+                                    <small class="text-success fw-bold"><i class="fas fa-arrow-up"></i> %2 Yeni</small>
+                                </div>
+                                <i class="fas fa-bus fs-1 primary-text border rounded-full secondary-bg p-3"></i>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div
+                                class="p-3 bg-white shadow kpi-card kpi-border-blue d-flex justify-content-around align-items-center rounded">
+                                <div>
+                                    <h3 class="fs-2 mb-0" id="kpi-daily-passengers">-</h3>
+                                    <p class="fs-5 text-muted mb-0">Günlük Yolcu</p>
+                                    <small class="text-success fw-bold"><i class="fas fa-arrow-up"></i> %12 Düne
+                                        Göre</small>
+                                </div>
+                                <i class="fas fa-users fs-1 primary-text border rounded-full secondary-bg p-3"></i>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div
+                                class="p-3 bg-white shadow kpi-card kpi-border-red d-flex justify-content-around align-items-center rounded">
+                                <div>
+                                    <h3 class="fs-2 text-danger mb-0" id="kpi-critical-lines">-</h3>
+                                    <p class="fs-5 text-muted mb-0">Acil Müdahale</p>
+                                    <small class="text-danger fw-bold"><i class="fas fa-arrow-up"></i> %5 Artış</small>
+                                </div>
+                                <i
+                                    class="fas fa-exclamation-triangle fs-1 text-danger border rounded-full secondary-bg p-3"></i>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div
+                                class="p-3 bg-white shadow kpi-card kpi-border-green d-flex justify-content-around align-items-center rounded">
+                                <div>
+                                    <h3 class="fs-2 mb-0" id="kpi-est-loss">-</h3>
+                                    <p class="fs-5 text-muted mb-0">Net Bilanço</p>
+                                    <small class="text-success fw-bold"><i class="fas fa-check"></i> Stabil</small>
+                                </div>
+                                <i class="fas fa-lira-sign fs-1 primary-text border rounded-full secondary-bg p-3"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Map & Fleet Chart Row -->
+                    <div class="row my-4">
+                        <!-- Left: Map -->
+                        <div class="col-lg-8">
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 font-weight-bold text-primary">Bölgesel Yoğunluk Haritası</h6>
+                                </div>
+                                <div class="card-body p-0">
+                                    <div id="dashboard-map"
+                                        style="height: 600px; width: 100%; border-bottom-left-radius: 0.35rem; border-bottom-right-radius: 0.35rem;">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Right: Events (Now primary side widget) -->
+                        <div class="col-lg-4">
+                            <div class="card shadow-sm h-100">
+                                <div class="card-header bg-white d-flex justify-content-between align-items-center">
+                                    <h5 class="mb-0">Son Kritik Olaylar</h5>
+                                    <span class="badge bg-danger">Canlı Akış</span>
+                                </div>
+
+                                <div class="card-body">
+                                    <div id="critical-events-list">
+                                        <p class="text-center text-muted">Veriler yükleniyor...</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+
+
+                <!-- 3. LINES VIEW -->
+                <section id="view-lines" style="display: none;">
+                    <div class="row my-4">
+                        <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-2">
+                            <h3 class="fs-4 mb-0">Hat Karar Destek Tablosu</h3>
+
+                            <div class="btn-group" role="group" aria-label="Filter Options">
+                                <button type="button" class="btn btn-outline-secondary active"
+                                    onclick="filterLines('ALL', this)">Tümü</button>
+                                <button type="button" class="btn btn-outline-danger"
+                                    onclick="filterLines('CRITICAL_OVERLOAD', this)">Acil Ek Sefer</button>
+                                <button type="button" class="btn btn-outline-warning"
+                                    onclick="filterLines('INEFFICIENT_ROUTE', this)">Hattı İptal Et</button>
+                                <button type="button" class="btn btn-outline-success"
+                                    onclick="filterLines('STABLE', this)">Mevcut Düzeni Koru</button>
+                            </div>
+
+                            <input type="text" id="line-search-input" class="form-control w-25 shadow-sm"
+                                placeholder="Hat Kodu veya Güzergah Ara">
+                        </div>
+                        <div class="col">
+                            <div class="table-responsive shadow-sm bg-white p-3 rounded">
+                                <table class="table table-hover align-middle">
+                                    <thead class="table-light">
+                                        <tr>
+                                            <th scope="col">Hat Kodu</th>
+                                            <th scope="col">Güzergah</th>
+                                            <th scope="col">Tür</th>
+                                            <th scope="col">Doluluk %</th>
+                                            <th scope="col">Ort. Süre</th>
+                                            <th scope="col">Kâr/Zarar</th>
+                                            <th scope="col">SİSTEM ÖNERİSİ</th>
+                                            <th scope="col">Aksiyon</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="lines-table-body">
+                                        <!-- Rows injected -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Detail Modal -->
+    <div class="modal fade" id="lineDetailModal" tabindex="-1" aria-labelledby="lineDetailModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="lineDetailModalLabel">Hat Detay Analizi</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <!-- Left: Chart -->
+                        <div class="col-lg-8 border-end">
+                            <h6 class="text-muted mb-3">Saatlik Yolcu Yoğunluğu (06:00 - 24:00)</h6>
+                            <div style="height: 350px;">
+                                <canvas id="modalHourlyChart"></canvas>
+                            </div>
+                        </div>
+                        <!-- Right: Decision Card -->
+                        <div class="col-lg-4">
+                            <div class="p-3 bg-light rounded h-100">
+                                <h4 class="mb-3">Sistem Kararı</h4>
+                                <div id="modalDecisionText" class="display-6 fw-bold mb-3 text-uppercase">
+                                    -
+                                </div>
+
+                                <h5 class="text-muted fs-6">Yapay Zeka Açıklaması</h5>
+                                <p id="modalReasonText" class="mb-4">
+                                    -
+                                </p>
+
+                                <hr>
+
+                                <h5 class="text-muted fs-6 mb-2">Finansal Özet</h5>
+                                <div class="d-flex justify-content-between small mb-1">
+                                    <span>Gider</span>
+                                    <span>Gelir</span>
+                                </div>
+                                <div class="progress" style="height: 25px;">
+                                    <div id="modalCostBar" class="progress-bar bg-danger" role="progressbar"
+                                        style="width: 50%"></div>
+                                    <div id="modalRevenueBar" class="progress-bar bg-success" role="progressbar"
+                                        style="width: 50%"></div>
+                                </div>
+                                <div class="d-flex justify-content-between small mt-1 fw-bold">
+                                    <span id="modalCostVal">0 ₺</span>
+                                    <span id="modalRevenueVal">0 ₺</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
+                    <button type="button" class="btn btn-primary">Rapor İndir</button>
+                </div> -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <!-- Custom JS -->
+    <script src="/js/main.js"></script>
+</body>
+
+</html>

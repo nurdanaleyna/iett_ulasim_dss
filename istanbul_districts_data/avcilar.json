@@ -1,0 +1,67 @@
+{
+  "district_name": "Avcılar",
+  "population": 457981,
+  "region": "Istanbul",
+  "data_source": "TUIK 2023 Est.",
+  "metrics": {
+    "daily_trips": 168842,
+    "traffic_density_score": 80
+  },
+  "lines": [
+    {
+      "line_code": "89A",
+      "route_type": "Normal",
+      "destination": "Fatih"
+    },
+    {
+      "line_code": "67A",
+      "route_type": "Ring",
+      "destination": "Kadıköy"
+    },
+    {
+      "line_code": "76A",
+      "route_type": "Ring",
+      "destination": "Sarıyer"
+    },
+    {
+      "line_code": "47A",
+      "route_type": "Express",
+      "destination": "Zeytinburnu"
+    },
+    {
+      "line_code": "19A",
+      "route_type": "Express",
+      "destination": "Kartal"
+    },
+    {
+      "line_code": "99A",
+      "route_type": "Ring",
+      "destination": "Güngören"
+    },
+    {
+      "line_code": "30A",
+      "route_type": "Express",
+      "destination": "Sancaktepe"
+    },
+    {
+      "line_code": "18A",
+      "route_type": "Express",
+      "destination": "Silivri"
+    },
+    {
+      "line_code": "88A",
+      "route_type": "Ring",
+      "destination": "Sultangazi"
+    },
+    {
+      "line_code": "63A",
+      "route_type": "Express",
+      "destination": "Arnavutköy"
+    },
+    {
+      "line_code": "87A",
+      "route_type": "Ring",
+      "destination": "Bakırköy"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "district_name": "Silivri",
+  "population": 209014,
+  "region": "Istanbul",
+  "data_source": "TUIK 2023 Est.",
+  "metrics": {
+    "daily_trips": 59789,
+    "traffic_density_score": 36
+  },
+  "lines": [
+    {
+      "line_code": "18S",
+      "route_type": "Normal",
+      "destination": "Eyüpsultan"
+    },
+    {
+      "line_code": "49S",
+      "route_type": "Express",
+      "destination": "Üsküdar"
+    },
+    {
+      "line_code": "21S",
+      "route_type": "Ring",
+      "destination": "Tuzla"
+    },
+    {
+      "line_code": "69S",
+      "route_type": "Normal",
+      "destination": "Adalar"
+    },
+    {
+      "line_code": "20S",
+      "route_type": "Express",
+      "destination": "Adalar"
+    }
+  ]
+}

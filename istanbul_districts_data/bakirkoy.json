@@ -1,0 +1,37 @@
+{
+  "district_name": "Bakırköy",
+  "population": 226387,
+  "region": "Istanbul",
+  "data_source": "TUIK 2023 Est.",
+  "metrics": {
+    "daily_trips": 81997,
+    "traffic_density_score": 72
+  },
+  "lines": [
+    {
+      "line_code": "99B",
+      "route_type": "Normal",
+      "destination": "Sancaktepe"
+    },
+    {
+      "line_code": "39B",
+      "route_type": "Normal",
+      "destination": "Çatalca"
+    },
+    {
+      "line_code": "62B",
+      "route_type": "Ring",
+      "destination": "Bahçelievler"
+    },
+    {
+      "line_code": "12B",
+      "route_type": "Ring",
+      "destination": "Kartal"
+    },
+    {
+      "line_code": "51B",
+      "route_type": "Express",
+      "destination": "Silivri"
+    }
+  ]
+}

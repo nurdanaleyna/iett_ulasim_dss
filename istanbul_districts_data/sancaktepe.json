@@ -1,0 +1,67 @@
+{
+  "district_name": "Sancaktepe",
+  "population": 474668,
+  "region": "Istanbul",
+  "data_source": "TUIK 2023 Est.",
+  "metrics": {
+    "daily_trips": 122364,
+    "traffic_density_score": 12
+  },
+  "lines": [
+    {
+      "line_code": "68S",
+      "route_type": "Ring",
+      "destination": "Bahçelievler"
+    },
+    {
+      "line_code": "31S",
+      "route_type": "Ring",
+      "destination": "Güngören"
+    },
+    {
+      "line_code": "72S",
+      "route_type": "Normal",
+      "destination": "Çekmeköy"
+    },
+    {
+      "line_code": "28S",
+      "route_type": "Ring",
+      "destination": "Arnavutköy"
+    },
+    {
+      "line_code": "22S",
+      "route_type": "Ring",
+      "destination": "Eyüpsultan"
+    },
+    {
+      "line_code": "73S",
+      "route_type": "Ring",
+      "destination": "Çatalca"
+    },
+    {
+      "line_code": "30S",
+      "route_type": "Normal",
+      "destination": "Avcılar"
+    },
+    {
+      "line_code": "45S",
+      "route_type": "Express",
+      "destination": "Başakşehir"
+    },
+    {
+      "line_code": "71S",
+      "route_type": "Ring",
+      "destination": "Bahçelievler"
+    },
+    {
+      "line_code": "62S",
+      "route_type": "Normal",
+      "destination": "Beylikdüzü"
+    },
+    {
+      "line_code": "22S",
+      "route_type": "Normal",
+      "destination": "Güngören"
+    }
+  ]
+}

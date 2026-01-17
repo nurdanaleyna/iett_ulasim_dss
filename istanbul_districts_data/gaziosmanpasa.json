@@ -1,0 +1,72 @@
+{
+  "district_name": "Gaziosmanpaşa",
+  "population": 493096,
+  "region": "Istanbul",
+  "data_source": "TUIK 2023 Est.",
+  "metrics": {
+    "daily_trips": 154797,
+    "traffic_density_score": 20
+  },
+  "lines": [
+    {
+      "line_code": "64G",
+      "route_type": "Ring",
+      "destination": "Maltepe"
+    },
+    {
+      "line_code": "13G",
+      "route_type": "Express",
+      "destination": "Eyüpsultan"
+    },
+    {
+      "line_code": "70G",
+      "route_type": "Express",
+      "destination": "Sultanbeyli"
+    },
+    {
+      "line_code": "72G",
+      "route_type": "Normal",
+      "destination": "Sancaktepe"
+    },
+    {
+      "line_code": "52G",
+      "route_type": "Normal",
+      "destination": "Güngören"
+    },
+    {
+      "line_code": "19G",
+      "route_type": "Ring",
+      "destination": "Beyoğlu"
+    },
+    {
+      "line_code": "17G",
+      "route_type": "Ring",
+      "destination": "Bağcılar"
+    },
+    {
+      "line_code": "15G",
+      "route_type": "Express",
+      "destination": "Esenyurt"
+    },
+    {
+      "line_code": "23G",
+      "route_type": "Ring",
+      "destination": "Küçükçekmece"
+    },
+    {
+      "line_code": "24G",
+      "route_type": "Normal",
+      "destination": "Ataşehir"
+    },
+    {
+      "line_code": "46G",
+      "route_type": "Express",
+      "destination": "Şile"
+    },
+    {
+      "line_code": "46G",
+      "route_type": "Express",
+      "destination": "Küçükçekmece"
+    }
+  ]
+}

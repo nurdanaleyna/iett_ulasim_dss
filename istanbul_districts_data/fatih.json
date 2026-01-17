@@ -1,0 +1,57 @@
+{
+  "district_name": "Fatih",
+  "population": 378446,
+  "region": "Istanbul",
+  "data_source": "TUIK 2023 Est.",
+  "metrics": {
+    "daily_trips": 122940,
+    "traffic_density_score": 9
+  },
+  "lines": [
+    {
+      "line_code": "40F",
+      "route_type": "Ring",
+      "destination": "Zeytinburnu"
+    },
+    {
+      "line_code": "68F",
+      "route_type": "Normal",
+      "destination": "Beyoğlu"
+    },
+    {
+      "line_code": "27F",
+      "route_type": "Ring",
+      "destination": "Küçükçekmece"
+    },
+    {
+      "line_code": "68F",
+      "route_type": "Express",
+      "destination": "Maltepe"
+    },
+    {
+      "line_code": "50F",
+      "route_type": "Express",
+      "destination": "Büyükçekmece"
+    },
+    {
+      "line_code": "97F",
+      "route_type": "Normal",
+      "destination": "Silivri"
+    },
+    {
+      "line_code": "18F",
+      "route_type": "Express",
+      "destination": "Beşiktaş"
+    },
+    {
+      "line_code": "90F",
+      "route_type": "Express",
+      "destination": "Sultangazi"
+    },
+    {
+      "line_code": "27F",
+      "route_type": "Express",
+      "destination": "Sultanbeyli"
+    }
+  ]
+}

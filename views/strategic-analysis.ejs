@@ -1,0 +1,1494 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İETT Stratejik Bölgesel Analiz</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Custom Scrollbar for dashboard */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 3px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 text-slate-800">
+
+    <div class="flex h-screen overflow-hidden">
+
+        <!-- Sidebar -->
+        <!-- Sidebar -->
+        <!-- Sidebar -->
+        <aside class="w-[260px] bg-slate-900 text-white flex flex-col flex-shrink-0 z-40 h-full">
+
+            <!-- Logo Area -->
+            <div class="h-[70px] flex items-center justify-center border-b border-slate-700">
+                <h4 class="m-0 font-bold text-cyan-400 text-xl flex items-center">
+                    <i class="fas fa-bus text-cyan-400 mr-2"></i> İETT DSS
+                </h4>
+            </div>
+
+            <!-- Menu Links -->
+            <nav class="flex-1 overflow-y-auto py-4">
+
+                <!-- Link 1: Dashboard -->
+                <a href="/dashboard"
+                    class="flex items-center px-4 py-3 mb-2 text-slate-400 hover:bg-slate-800 transition-colors cursor-pointer group">
+                    <i
+                        class="fas fa-chart-pie text-xl w-[25px] text-center group-hover:text-white transition-colors"></i>
+                    <span class="ml-3 font-medium">Dashboard</span>
+                </a>
+
+                <!-- Link 2: Hat Analizleri -->
+                <a href="/line-analysis"
+                    class="flex items-center px-4 py-3 mb-2 text-slate-400 hover:bg-slate-800 transition-colors cursor-pointer group">
+                    <i class="fas fa-route text-xl w-[25px] text-center group-hover:text-white transition-colors"></i>
+                    <span class="ml-3 font-medium">Hat Analizleri</span>
+                </a>
+
+                <!-- Link 3: Stratejik Analiz (Active) -->
+                <a href="#"
+                    class="flex items-center px-4 py-3 mb-2 text-cyan-400 bg-slate-800 border-r-4 border-cyan-400 cursor-pointer">
+                    <i class="fas fa-chess-rook text-xl w-[25px] text-center"></i>
+                    <span class="ml-3 font-medium">Stratejik Analiz</span>
+                </a>
+
+            </nav>
+
+            <!-- Profile Section -->
+            <div class="p-4 border-t border-slate-700 bg-slate-800">
+                <div class="flex items-center">
+                    <div
+                        class="w-10 h-10 rounded-full bg-cyan-900 text-cyan-300 flex items-center justify-center text-sm font-bold shadow-lg">
+                        YM
+                    </div>
+                    <div class="ml-3">
+                        <p class="text-sm font-bold text-white">Yönetici Modu</p>
+                        <p class="text-xs text-slate-400">Strateji Dairesi</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main id="mainContent" class="flex-1 flex flex-col overflow-hidden bg-slate-50 relative">
+
+            <!-- 1. HEADER & FILTERS (Sticky Top) -->
+            <header class="bg-white shadow-sm border-b border-slate-200 z-30 sticky top-0 flex-shrink-0">
+                <div class="px-8 py-4 flex justify-between items-center bg-white">
+                    <div class="flex items-center">
+                        <div>
+                            <h1 class="text-2xl font-black text-slate-800 tracking-tight uppercase">İETT Karar Destek
+                                Merkezi</h1>
+                            <p class="text-xs font-bold text-slate-400 mt-1 uppercase tracking-wider">Yönetici Paneli
+                                v2.4
+                            </p>
+                        </div>
+                    </div>
+                    <div class="text-sm text-gray-500 font-medium">
+                        20 Aralık 2025 Cumartesi
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Content Scrollable Area -->
+            <div class="flex-1 overflow-y-auto p-8 space-y-8 pb-20">
+
+                <!-- SECTION A: STRATEGIC KPI STRIP (The "Health Check") -->
+                <div class="space-y-6">
+                    <!-- Financial Röntgen Section (Full Width) -->
+                    <div class="bg-white rounded-2xl shadow-sm border border-slate-100 p-6">
+                        <!-- Header -->
+                        <div class="flex justify-between items-center mb-6">
+                            <div>
+                                <h3 class="text-xl font-black text-slate-800 flex items-center gap-2">
+                                    <i class="fas fa-coins text-amber-500"></i> FİNANSAL RÖNTGEN (Q4 2025)
+                                </h3>
+                                <p class="text-xs text-slate-500 font-bold mt-1">Son 3 Aylık Detaylı Gelir/Gider Analizi
+                                </p>
+                            </div>
+
+                        </div>
+
+                        <!-- Summary Boxes -->
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6 text-center">
+                            <div class="p-4 bg-rose-50 rounded-xl border border-rose-100">
+                                <p class="text-xs text-rose-500 font-bold uppercase mb-1">TOPLAM GİDER</p>
+                                <p id="mainTotalExpense" class="text-2xl font-black text-rose-700">...</p>
+                            </div>
+                            <div class="p-4 bg-emerald-50 rounded-xl border border-emerald-100">
+                                <p class="text-xs text-emerald-500 font-bold uppercase mb-1">OPERASYONEL GELİR</p>
+                                <p id="mainTotalRevenue" class="text-2xl font-black text-emerald-700">...</p>
+                            </div>
+                            <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
+                                <p class="text-xs text-slate-500 font-bold uppercase mb-1">NET AÇIK/FAZLA</p>
+                                <p id="mainNetResult" class="text-2xl font-black text-slate-700">...</p>
+                            </div>
+                        </div>
+
+                        <!-- Charts -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div class="bg-slate-50 rounded-xl p-4 border border-slate-100 flex flex-col items-center">
+                                <h4 class="text-sm font-bold text-slate-700 mb-4 uppercase">GİDER KALEMLERİ DAĞILIMI
+                                </h4>
+                                <div class="relative h-64 w-full">
+                                    <canvas id="expenseDoughnutChart"></canvas>
+                                </div>
+                            </div>
+                            <div class="bg-slate-50 rounded-xl p-4 border border-slate-100 flex flex-col items-center">
+                                <h4 class="text-sm font-bold text-slate-700 mb-4 uppercase">GELİR vs GİDER TRENDİ (SON 4
+                                    AY)</h4>
+                                <div class="relative h-64 w-full">
+                                    <canvas id="trendAreaChart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <!-- YOLCU MEMNUNİYETİ & KALİTE PANELİ (Expanded View) -->
+                    <!-- YOLCU MEMNUNİYETİ VE KALİTE ANALİZİ (YENİ DSS TASARIMI) -->
+                    <div class="bg-white rounded-2xl shadow-sm border border-slate-100 p-6">
+                        <!-- PANEL BAŞLIĞI -->
+                        <div class="flex justify-between items-center mb-6">
+                            <div>
+                                <h3 class="text-xl font-black text-slate-800 flex items-center gap-2">
+                                    <i class="fas fa-users-viewfinder text-indigo-600"></i> YOLCU MEMNUNİYETİ VE KALİTE
+                                    ANALİZİ
+                                </h3>
+                                <p class="text-xs text-slate-500 font-bold mt-1">Canlı Anket, CRM ve Sosyal Medya
+                                    Verileri</p>
+                            </div>
+                            <div
+                                class="bg-red-50 text-red-600 px-3 py-1 rounded-full font-bold border border-red-200 text-xs">
+                                <i class="fa-solid fa-arrow-trend-down me-1"></i> %1.2 Düşüş (Önceki Çeyreğe Göre - Q3
+                                vs Q4)
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+                            <!-- 1. SÜTUN: SKOR KARTI VE HEDEF ANALİZİ (GAP) -->
+                            <div class="md:col-span-1 border-r border-slate-100 pr-8">
+                                <div class="text-center mb-8">
+                                    <h1 class="text-6xl font-black text-slate-800 tracking-tight">3.5</h1>
+                                    <div class="text-amber-400 text-2xl my-2 space-x-1">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                    <p class="text-xs font-bold text-slate-400 uppercase tracking-wider">Genel Ortalama
+                                        (14.520 Oy)</p>
+                                </div>
+
+                                <!-- Metrikler ve HEDEF Çizgileri -->
+                                <div class="space-y-6">
+                                    <!-- Metrik 1 -->
+                                    <div>
+                                        <div class="flex justify-between text-xs font-bold text-slate-600 mb-1.5">
+                                            <span>Araç Temizliği</span>
+                                            <span>4.1 <span class="text-slate-400 font-normal text-[10px]">/ Hedef:
+                                                    4.5</span></span>
+                                        </div>
+                                        <div class="relative h-2 bg-slate-100 rounded-full">
+                                            <div class="h-full bg-emerald-500 rounded-full" style="width: 82%"></div>
+                                            <!-- Hedef Çizgisi -->
+                                            <div class="absolute bg-slate-800 w-0.5 h-3.5 left-[90%] -top-0.5"
+                                                title="Hedef"></div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Metrik 2 -->
+                                    <div>
+                                        <div class="flex justify-between text-xs font-bold text-slate-600 mb-1.5">
+                                            <span>Personel Davranışı</span>
+                                            <span>3.5 <span class="text-slate-400 font-normal text-[10px]">/ Hedef:
+                                                    4.5</span></span>
+                                        </div>
+                                        <div class="relative h-2 bg-slate-100 rounded-full">
+                                            <div class="h-full bg-amber-400 rounded-full" style="width: 70%"></div>
+                                            <div class="absolute bg-slate-800 w-0.5 h-3.5 left-[90%] -top-0.5"
+                                                title="Hedef"></div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Metrik 3 - KRİTİK -->
+                                    <div>
+                                        <div class="flex justify-between text-xs font-bold text-slate-600 mb-1.5">
+                                            <span>Sefer Dakikliği</span>
+                                            <span class="text-rose-500">2.8 <span
+                                                    class="text-slate-400 font-normal text-[10px]">/ Hedef:
+                                                    4.5</span></span>
+                                        </div>
+                                        <div class="relative h-2 bg-slate-100 rounded-full">
+                                            <div class="h-full bg-rose-500 rounded-full" style="width: 56%"></div>
+                                            <div class="absolute bg-slate-800 w-0.5 h-3.5 left-[90%] -top-0.5"
+                                                title="Hedef"></div>
+                                        </div>
+                                        <p class="text-[10px] font-bold text-rose-500 mt-1 flex items-center gap-1">
+                                            <i class="fas fa-exclamation-triangle"></i> Kritik Seviye (Acil Aksiyon)
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 2. SÜTUN: SORUN KAYNAĞI (En Kötü 5 Hat) -->
+                            <div class="md:col-span-1 border-r border-slate-100 pr-8">
+                                <h5
+                                    class="text-xs font-bold text-slate-600 uppercase tracking-wider mb-2 flex items-center gap-2">
+                                    <i class="fas fa-circle-exclamation text-rose-500"></i> EN DÜŞÜK PUANLI 5 HAT
+                                </h5>
+                                <p class="text-[10px] text-slate-400 font-bold mb-4">Müdahale edilmesi gereken öncelikli
+                                    hatlar.</p>
+
+                                <div class="overflow-hidden rounded-lg border border-slate-100 mb-4">
+                                    <table class="min-w-full divide-y divide-slate-100">
+                                        <thead class="bg-slate-50">
+                                            <tr>
+                                                <th
+                                                    class="px-3 py-2 text-left text-[10px] font-bold text-slate-500 uppercase">
+                                                    Hat</th>
+                                                <th
+                                                    class="px-3 py-2 text-left text-[10px] font-bold text-slate-500 uppercase">
+                                                    Bölge</th>
+                                                <th
+                                                    class="px-3 py-2 text-right text-[10px] font-bold text-slate-500 uppercase">
+                                                    Puan</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="divide-y divide-slate-100 bg-white">
+                                            <tr>
+                                                <td class="px-3 py-2 text-xs font-bold text-slate-700">142B</td>
+                                                <td class="px-3 py-2 text-xs text-slate-500">Esenyurt</td>
+                                                <td class="px-3 py-2 text-xs font-bold text-rose-600 text-right">1.8
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="px-3 py-2 text-xs font-bold text-slate-700">500T</td>
+                                                <td class="px-3 py-2 text-xs text-slate-500">Tuzla/Cevizli</td>
+                                                <td class="px-3 py-2 text-xs font-bold text-rose-600 text-right">2.1
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="px-3 py-2 text-xs font-bold text-slate-700">19F</td>
+                                                <td class="px-3 py-2 text-xs text-slate-500">Kadıköy</td>
+                                                <td class="px-3 py-2 text-xs font-bold text-amber-500 text-right">2.9
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="px-3 py-2 text-xs font-bold text-slate-700">34BZ</td>
+                                                <td class="px-3 py-2 text-xs text-slate-500">Metrobüs</td>
+                                                <td class="px-3 py-2 text-xs font-bold text-amber-500 text-right">3.1
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="px-3 py-2 text-xs font-bold text-slate-700">DT1</td>
+                                                <td class="px-3 py-2 text-xs text-slate-500">Ortaköy</td>
+                                                <td class="px-3 py-2 text-xs font-bold text-amber-500 text-right">3.2
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                            </div>
+
+                            <!-- 3. SÜTUN: İÇGÖRÜ ANALİZİ (Tag Cloud) -->
+                            <div class="md:col-span-1">
+                                <h5
+                                    class="text-xs font-bold text-slate-600 uppercase tracking-wider mb-2 flex items-center gap-2">
+                                    <i class="fas fa-brain text-purple-500"></i> YOLCULAR NE KONUŞUYOR?
+                                </h5>
+                                <p class="text-[10px] text-slate-400 font-bold mb-4">Yorumlarda en sık geçen anahtar
+                                    kelimeler (AI).</p>
+
+                                <div class="flex flex-wrap gap-2 content-start min-h-[160px]">
+                                    <!-- Büyük Sorunlar -->
+                                    <span
+                                        class="px-3 py-1.5 bg-rose-500 text-white text-xs font-bold rounded shadow-sm">GECİKME
+                                        (450)</span>
+                                    <span
+                                        class="px-3 py-1.5 bg-rose-500 text-white text-xs font-bold rounded shadow-sm">KLİMA
+                                        (320)</span>
+
+                                    <!-- Orta Sorunlar -->
+                                    <span
+                                        class="px-2 py-1 bg-amber-100 text-amber-800 text-xs font-bold rounded border border-amber-200">ŞOFÖR
+                                        TAVRI</span>
+                                    <span
+                                        class="px-2 py-1 bg-amber-100 text-amber-800 text-xs font-bold rounded border border-amber-200">AŞIRI
+                                        KALABALIK</span>
+                                    <span
+                                        class="px-2 py-1 bg-amber-100 text-amber-800 text-xs font-bold rounded border border-amber-200">DURAKTA
+                                        DURMADI</span>
+
+                                    <!-- Pozitif/Nötr -->
+                                    <span
+                                        class="px-2 py-1 bg-emerald-100 text-emerald-700 text-xs font-bold rounded border border-emerald-200">TEŞEKKÜRLER</span>
+                                    <span
+                                        class="px-2 py-1 bg-slate-100 text-slate-600 text-xs font-bold rounded border border-slate-200">İSTANBULKART</span>
+                                    <span
+                                        class="px-2 py-1 bg-slate-100 text-slate-600 text-xs font-bold rounded border border-slate-200">MOBİL
+                                        UYGULAMA</span>
+                                    <span
+                                        class="px-2 py-1 bg-emerald-100 text-emerald-700 text-xs font-bold rounded border border-emerald-200">YENİ
+                                        OTOBÜS</span>
+                                </div>
+
+                                <div class="mt-4 p-3 bg-slate-50 rounded-lg border-l-4 border-purple-500">
+                                    <h6 class="text-[10px] font-bold text-purple-700 uppercase mb-1">AI ÖNERİSİ:</h6>
+                                    <p class="text-xs text-slate-600 font-medium leading-relaxed">
+                                        "Klima" ve "Gecikme" şikayetleri Esenyurt bölgesinde %40 artış gösterdi. 142B
+                                        hattına ek sefer ve teknik bakım planlanmalı.
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- SECTION B: VISUAL ANALYSIS LAYER (Charts) -->
+                <div class="grid grid-cols-12 gap-6 h-96">
+                    <!-- Left: Scatter Plot (60%) -->
+                    <!-- Left: Scatter Plot (60%) REPLACED -->
+                    <div
+                        class="col-span-12 lg:col-span-8 bg-white rounded-2xl shadow-sm border border-slate-100 flex flex-col">
+                        <div class="p-6 border-b border-slate-100 flex justify-between items-center">
+                            <div>
+                                <h5 class="flex items-center gap-2 text-lg font-bold text-slate-800">
+                                    <i class="fas fa-map-location-dot text-indigo-600"></i>
+                                    İLÇE BAZLI ARZ/TALEP DENGE MATRİSİ (39 İLÇE)
+                                </h5>
+                                <p class="text-xs text-slate-500 mt-1">
+                                    Hangi ilçede otobüsler boş geziyor, hangi ilçede insanlar sığmıyor?
+                                </p>
+                            </div>
+                            <div class="flex gap-3 text-xs bg-slate-50 p-2 rounded">
+                                <span class="flex items-center gap-1"><span
+                                        class="w-3 h-3 rounded-full bg-red-500"></span> Kriz</span>
+                                <span class="flex items-center gap-1"><span class="w-3 h-3 rounded-full"
+                                        style="background-color: #eab308;"></span> Atıl</span>
+                                <span class="flex items-center gap-1"><span
+                                        class="w-3 h-3 rounded-full bg-emerald-500"></span> Verimli</span>
+                                <span class="flex items-center gap-1"><span
+                                        class="w-3 h-3 rounded-full bg-slate-400"></span> Dengeli (Stabil)</span>
+                            </div>
+                        </div>
+
+                        <div class="p-6 flex-1 flex flex-col">
+                            <div class="relative w-full h-96" style="margin-bottom: 60px;">
+                                <canvas id="dssScatterChart"></canvas>
+                            </div>
+
+                            <!-- DSS AKSİYON ÖNERİSİ -->
+                            <div
+                                class="bg-red-50 border border-red-200 text-red-800 flex items-center mt-4 p-3 rounded-lg">
+                                <i class="fas fa-triangle-exclamation text-2xl mr-4"></i>
+                                <div>
+                                    <h6 class="font-bold text-sm mb-0">KRİTİK UYARI:</h6>
+                                    <p class="text-xs mb-0">
+                                        <strong>Esenyurt</strong> ve <strong>Bağcılar</strong> bölgesinde sefer/yolcu
+                                        oranı tehlikeli seviyede (Kırmızı Bölge).
+                                        Yolcu memnuniyeti düşüşünün (%1.2) ana kaynağı burasıdır. Bu bölgelere
+                                        <strong>Bakırköy</strong> hattından araç kaydırılması önerilir.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Radar Chart (40%) -->
+                    <!-- Right: Radar Chart (40%) REPLACED -->
+                    <div
+                        class="col-span-12 lg:col-span-4 bg-white rounded-2xl shadow-sm border border-slate-100 flex flex-col">
+                        <div class="p-6 border-b border-slate-100">
+                            <h5 class="flex items-center gap-2 text-lg font-bold text-slate-800">
+                                <i class="fas fa-chart-radar text-indigo-600"></i>
+                                BÖLGESEL PERFORMANS KIYASLAMASI
+                            </h5>
+                            <p class="text-xs text-slate-500 mt-1">
+                                Uç noktalar ve genel ortalama analizi (Best vs Worst vs Stable).
+                            </p>
+                        </div>
+
+                        <div class="p-6 flex-1 flex flex-col">
+                            <!-- 1. KISIM: RADAR GRAFİK -->
+                            <div class="relative w-full h-64">
+                                <canvas id="dssRadarChart"></canvas>
+                            </div>
+
+                            <!-- 2. KISIM: ÖZET KARTLAR -->
+                            <div class="mt-4 space-y-3">
+                                <!-- Lider Kart -->
+                                <div
+                                    class="flex items-center justify-between p-3 rounded-lg border-l-4 border-emerald-500 bg-emerald-50">
+                                    <div>
+                                        <span class="text-[10px] font-bold text-emerald-700 block uppercase">En İyi
+                                            Performans</span>
+                                        <span class="text-sm font-bold text-slate-800">Kadıköy</span>
+                                    </div>
+                                    <div class="text-right">
+                                        <span class="text-lg font-bold text-emerald-600">9.2</span>
+                                        <span class="text-[10px] text-slate-500 block">Ort. Puan</span>
+                                    </div>
+                                </div>
+
+                                <!-- Stabil Kart -->
+                                <div
+                                    class="flex items-center justify-between p-3 rounded-lg border-l-4 border-blue-500 bg-blue-50">
+                                    <div>
+                                        <span class="text-[10px] font-bold text-blue-700 block uppercase">Stabil /
+                                            Dengeli</span>
+                                        <span class="text-sm font-bold text-slate-800">Şile</span>
+                                    </div>
+                                    <div class="text-right">
+                                        <span class="text-lg font-bold text-blue-600">7.8</span>
+                                        <span class="text-[10px] text-slate-500 block">Ort. Puan</span>
+                                    </div>
+                                </div>
+
+                                <!-- Kritik Kart -->
+                                <div
+                                    class="flex items-center justify-between p-3 rounded-lg border-l-4 border-rose-500 bg-rose-50">
+                                    <div>
+                                        <span class="text-[10px] font-bold text-rose-700 block uppercase">Gelişim
+                                            Gerekiyor</span>
+                                        <span class="text-sm font-bold text-slate-800">Esenyurt</span>
+                                    </div>
+                                    <div class="text-right">
+                                        <span class="text-lg font-bold text-rose-600">3.4</span>
+                                        <span class="text-[10px] text-slate-500 block">Ort. Puan</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SECTION B.2: NÜFUS VE SEFER ANALİZİ -->
+
+
+                <div class="bg-white rounded-2xl shadow-sm border border-slate-100 p-6">
+                    <div class="flex justify-between items-center mb-6">
+                        <div class="mt-4">
+                            <h5 class="text-lg font-bold text-slate-800">
+                                Bölgesel Nüfus ve Günlük Sefer İlişkisi
+                            </h5>
+                            <p class="text-xs text-slate-500">
+                                Nüfus yoğunluğu ile sefer sayılarının korelasyon analizi.
+                            </p>
+                        </div>
+                        <button class="text-slate-400 hover:text-indigo-600 transition-colors"><i
+                                class="fas fa-expand-alt"></i></button>
+                    </div>
+                    <div class="relative h-72 w-full">
+                        <canvas id="populationTripsChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- SECTION: PASSENGER PROFILE & REVENUE + COMPACT SIMULATOR -->
+                <div class="grid grid-cols-12 gap-6 mb-6" style="margin-top: -80px; position: relative; z-index: 10;">
+                    <!-- LEFT: PASSENGER PROFILE (58%) -->
+                    <div
+                        class="col-span-12 lg:col-span-7 bg-white rounded-2xl shadow-sm border border-slate-100 flex flex-col">
+                        <div class="p-6 border-b border-slate-100 flex justify-between items-center">
+                            <div>
+                                <h5 class="flex items-center gap-2 text-lg font-bold text-slate-800">
+                                    <i class="fas fa-users-rectangle text-cyan-600"></i>
+                                    YOLCU PROFİLİ VE GELİR ETKİSİ
+                                </h5>
+                                <p class="text-xs text-slate-500 mt-1">
+                                    Taşınan yolcu türlerinin gelire katkı oranı.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="p-6 flex-1 flex flex-col">
+                            <!-- Chart Canvas -->
+                            <div class="relative w-full h-64">
+                                <canvas id="passengerProfileChart"></canvas>
+                            </div>
+
+                            <!-- Insight Box -->
+                            <div class="mt-4 bg-cyan-50 border border-cyan-100 p-3 rounded flex items-start">
+                                <i class="fas fa-circle-info text-cyan-600 mt-1 mr-2"></i>
+                                <div>
+                                    <h6 class="text-xs font-bold text-cyan-800 mb-1">GELİR DENGESİZLİĞİ TESPİTİ:</h6>
+                                    <p class="text-xs text-slate-600 m-0">
+                                        Sistemi kullananların <strong>%65'i (Öğrenci + Sosyal)</strong> indirimli
+                                        seyahat ediyor, ancak gelirin sadece <strong>%35'ini</strong> oluşturuyorlar.
+                                        Finansal açığın ana sebebi bu sübvansiyon makasıdır.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- RIGHT: COMPACT DECISION SIMULATOR (42%) -->
+                    <div class="col-span-12 lg:col-span-5">
+                        <div class="h-full bg-slate-900 rounded-2xl shadow-sm border border-slate-800 text-white flex flex-col"
+                            style="background: linear-gradient(145deg, #1f2937 0%, #111827 100%)">
+                            <!-- Header -->
+                            <div class="p-6 border-b border-slate-800 pb-0">
+                                <h5 class="font-bold text-white mb-1 text-lg flex items-center gap-2">
+                                    <i class="fa-solid fa-wand-magic-sparkles text-cyan-400"></i>
+                                    KARAR SİMÜLATÖRÜ
+                                </h5>
+                                <p class="text-xs text-slate-400">Değişkenlerle oynayarak geleceği test edin.</p>
+                            </div>
+
+                            <div class="p-6 pt-4 flex-1 flex flex-col justify-between">
+                                <!-- Controls -->
+                                <div class="space-y-4">
+                                    <!-- Slider 1 -->
+                                    <div>
+                                        <div class="flex justify-between text-xs font-bold mb-2">
+                                            <span class="text-slate-300">Sefer Sıklığı</span>
+                                            <span id="simFreqLabel"
+                                                class="px-2 py-0.5 rounded bg-slate-700 border border-slate-600 text-slate-300">-5%</span>
+                                        </div>
+                                        <input type="range" id="simFreqInput" min="-50" max="50" step="5" value="-5"
+                                            class="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-cyan-400">
+                                    </div>
+
+                                    <!-- Slider 2 -->
+                                    <div>
+                                        <div class="flex justify-between text-xs font-bold mb-2">
+                                            <span class="text-slate-300">Bilet Fiyatı</span>
+                                            <span id="simPriceLabel"
+                                                class="px-2 py-0.5 rounded bg-amber-900/50 text-amber-200 border border-amber-800">+10%</span>
+                                        </div>
+                                        <input type="range" id="simPriceInput" min="-20" max="50" step="5" value="10"
+                                            class="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-amber-500">
+                                    </div>
+                                </div>
+
+                                <!-- Results -->
+                                <div class="grid grid-cols-2 gap-3 mt-6">
+                                    <div class="p-3 rounded-lg bg-slate-800/80 border border-slate-700 text-center">
+                                        <span class="block text-[10px] text-slate-500 font-bold uppercase mb-1">TAHMİNİ
+                                            GELİR</span>
+                                        <span id="simRevenueDisplay"
+                                            class="block text-xl font-black text-emerald-400">₺115.2K</span>
+                                    </div>
+                                    <div class="p-3 rounded-lg bg-slate-800/80 border border-slate-700 text-center">
+                                        <span
+                                            class="block text-[10px] text-slate-500 font-bold uppercase mb-1">MEMNUNİYET</span>
+                                        <span id="simSatDisplay"
+                                            class="block text-xl font-black text-amber-400">%6.7</span>
+                                    </div>
+                                </div>
+
+                                <!-- Action Button -->
+                                <button id="simApplyBtn"
+                                    class="w-full mt-4 py-2.5 rounded-lg bg-cyan-900/30 border border-cyan-800 text-cyan-300 text-sm font-bold hover:bg-cyan-900/50 transition-colors flex items-center justify-center gap-2">
+                                    <i class="fa-solid fa-play"></i> Senaryoyu Uygula
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+            </div>
+        </main>
+    </div>
+
+    <!-- Simulation Result Modal -->
+    <div id="simulationModal" class="fixed inset-0 z-50 hidden" aria-labelledby="modal-title" role="dialog"
+        aria-modal="true">
+        <!-- Backdrop -->
+        <div class="fixed inset-0 bg-slate-900/80 backdrop-blur-sm transition-opacity opacity-0" id="modalBackdrop">
+        </div>
+
+        <!-- Modal Panel -->
+        <div class="fixed inset-0 z-10 overflow-y-auto">
+            <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+                <div class="relative transform overflow-hidden rounded-2xl bg-white text-left shadow-2xl transition-all sm:my-8 sm:w-full sm:max-w-lg opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+                    id="modalPanel">
+
+                    <!-- Modal Content -->
+                    <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
+                        <div class="sm:flex sm:items-start">
+                            <div
+                                class="mx-auto flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-indigo-100 sm:mx-0 sm:h-10 sm:w-10">
+                                <i class="fas fa-magic text-indigo-600"></i>
+                            </div>
+                            <div class="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left w-full">
+                                <h3 class="text-lg font-semibold leading-6 text-slate-900" id="modal-title">Senaryo
+                                    Simülasyon Sonucu</h3>
+                                <div class="mt-2">
+                                    <p class="text-sm text-slate-500 mb-4">
+                                        Seçilen senaryo için yapay zeka tabanlı etki analizi tamamlandı.
+                                    </p>
+
+                                    <!-- Result Card -->
+                                    <div class="bg-slate-50 rounded-xl p-4 border border-slate-100 mb-4">
+                                        <div
+                                            class="flex justify-between items-center mb-2 border-b border-slate-200 pb-2">
+                                            <span class="text-xs font-bold text-slate-500 uppercase">Senaryo</span>
+                                            <span class="text-sm font-bold text-slate-800"
+                                                id="modalScenarioName">...</span>
+                                        </div>
+                                        <div class="grid grid-cols-2 gap-4 mt-4">
+                                            <div class="text-center">
+                                                <p class="text-xs text-slate-400 mb-1">Mevcut Verimlilik</p>
+                                                <p class="text-xl font-bold text-slate-600" id="modalCurrentEff">...</p>
+                                            </div>
+                                            <div class="text-center relative">
+                                                <div
+                                                    class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-10">
+                                                    <i class="fas fa-arrow-right text-4xl text-emerald-500"></i>
+                                                </div>
+                                                <p class="text-xs text-emerald-600 font-bold mb-1">Öngörülen</p>
+                                                <p class="text-2xl font-extrabold text-emerald-500" id="modalNewEff">...
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                        <!-- Impact Badge -->
+                                        <div
+                                            class="mt-4 bg-indigo-50 border border-indigo-100 rounded-lg p-3 flex items-center gap-3">
+                                            <i class="fas fa-info-circle text-indigo-500"></i>
+                                            <p class="text-xs text-indigo-700 font-medium" id="modalImpactText">...</p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Actions -->
+                    <div class="bg-slate-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
+                        <button type="button" onclick="closeModal()"
+                            class="inline-flex w-full justify-center rounded-lg bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 sm:w-auto transition-colors">
+                            Kapat
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script>
+        // Global değişkenler
+        let globalDistrictsData = [];
+        let scatterChartInstance = null;
+        let radarChartInstance = null;
+        let expenseChart = null;  // NEW
+        let balanceChart = null;  // NEW
+        let satisfactionChart = null; // MEMNUNİYET GRAFİĞİ
+
+        document.addEventListener("DOMContentLoaded", async () => {
+            await loadDashboard();
+        });
+
+        // 1. ANA VERİ YÜKLEME
+        async function loadDashboard() {
+            try {
+                // API'den Stratejik Verileri Çek
+                const res = await fetch('/api/analysis/strategic-report');
+                const json = await res.json();
+
+                if (json.success) {
+                    globalDistrictsData = json.data;
+                    updateKPIs(globalDistrictsData);
+                    initCharts(globalDistrictsData);
+                    populateAnalysisTable(globalDistrictsData);
+
+                    // YENİ: Gerçek Memnuniyet Verisini Yükle
+                    // await loadSatisfactionStats(); // STATIC HTML'E GEÇTİK, ARTIK GEREK YOK
+
+                    // YENİ: Finansal Detayları Yükle (Main Page)
+                    await loadFinancialDetails();
+                } else {
+                    console.error("Veri hatası:", json.message);
+                }
+            } catch (error) {
+                console.error("Bağlantı hatası:", error);
+            }
+        }
+
+        // 2. KPI KARTLARINI GÜNCELLE
+        function updateKPIs(data) {
+            let totalRevenue = 0;
+            let totalCost = 0;
+            let weightedSat = 0;
+            let avgEff = 0;
+
+            data.forEach(d => {
+                totalRevenue += d.revenue;
+                totalCost += d.cost;
+                weightedSat += d.satisfaction;
+                avgEff += d.efficiency;
+            });
+
+            const netBalance = totalRevenue - totalCost;
+            const avgSat = (weightedSat / data.length).toFixed(1);
+            const finalEff = Math.round(avgEff / data.length);
+
+            // A) FİNANSAL DENGE
+            const balEl = document.getElementById('kpi-balance-val');
+            if (balEl) {
+                const balanceM = (netBalance / 1000000).toFixed(1) + 'M';
+                balEl.innerText = (netBalance >= 0 ? '+' : '') + '₺' + balanceM;
+                balEl.className = `text-2xl font-black ${netBalance >= 0 ? 'text-emerald-600' : 'text-rose-600'}`;
+            }
+
+            // B) MEMNUNİYET (This KPI is now static in the new HTML, so no update needed here)
+            // const satEl = document.getElementById('kpi-sat-val');
+            // if (satEl) satEl.innerText = avgSat;
+
+            // C) VERİMLİLİK
+            const effEl = document.getElementById('kpi-eff-val');
+            if (effEl) effEl.innerText = '%' + finalEff;
+        }
+
+        // 3. GRAFİKLERİ ÇİZ
+        function initCharts(data) {
+            // --- SCATTER CHART (İLÇE BAZLI ARZ/TALEP MATRİSİ) ---
+            const istanbulData = [
+                // --- 🔴 KRİZ BÖLGESİ (Yüksek Yolcu / Düşük-Orta Sefer) ---
+                { name: 'Esenyurt', x: 320, y: 48000, status: 'Kriz' },
+                { name: 'Bağcılar', x: 410, y: 45000, status: 'Kriz' },
+                { name: 'Sultanbeyli', x: 280, y: 32000, status: 'Kriz' },
+                { name: 'G.Osmanpaşa', x: 300, y: 36000, status: 'Kriz' },
+                { name: 'Esenler', x: 310, y: 34000, status: 'Kriz' },
+                { name: 'Ümraniye', x: 450, y: 42000, status: 'Kriz' },
+                { name: 'Sancaktepe', x: 290, y: 28000, status: 'Kriz' },
+                // --- 🟢 VERİMLİ BÖLGE (Yüksek Yolcu / Yüksek Sefer) ---
+                { name: 'Kadıköy', x: 850, y: 55000, status: 'Verimli' },
+                { name: 'Fatih', x: 780, y: 52000, status: 'Verimli' },
+                { name: 'Şişli', x: 820, y: 49000, status: 'Verimli' },
+                { name: 'Üsküdar', x: 750, y: 46000, status: 'Verimli' },
+                { name: 'Beşiktaş', x: 700, y: 44000, status: 'Verimli' },
+                { name: 'Ataşehir', x: 600, y: 38000, status: 'Verimli' },
+                { name: 'Maltepe', x: 580, y: 35000, status: 'Verimli' },
+                { name: 'Bahçelievler', x: 620, y: 39000, status: 'Verimli' },
+                // --- 🟡 ATIL KAPASİTE / İSRAF (Düşük Yolcu / Yüksek Sefer) ---
+                { name: 'Bakırköy', x: 650, y: 22000, status: 'İsraf' },
+                { name: 'Başakşehir', x: 700, y: 25000, status: 'İsraf' },
+                { name: 'Beylikdüzü', x: 550, y: 18000, status: 'İsraf' },
+                { name: 'Tuzla', x: 480, y: 15000, status: 'İsraf' },
+                // --- ⚪ DÜŞÜK YOĞUNLUK / DENGELİ (Az Yolcu / Az Sefer) ---
+                { name: 'Şile', x: 80, y: 3000, status: 'Düşük' },
+                { name: 'Çatalca', x: 60, y: 2500, status: 'Düşük' },
+                { name: 'Silivri', x: 120, y: 8000, status: 'Düşük' },
+                { name: 'Adalar', x: 40, y: 1500, status: 'Düşük' },
+                { name: 'Arnavutköy', x: 200, y: 12000, status: 'Düşük' },
+                { name: 'Çekmeköy', x: 250, y: 18000, status: 'Düşük' },
+                { name: 'Beykoz', x: 220, y: 14000, status: 'Düşük' },
+                { name: 'Sarıyer', x: 350, y: 20000, status: 'Düşük' },
+                { name: 'Büyükçekmece', x: 180, y: 11000, status: 'Düşük' },
+                { name: 'Kağıthane', x: 400, y: 30000, status: 'Denge' },
+                { name: 'Kartal', x: 420, y: 31000, status: 'Denge' },
+                { name: 'Pendik', x: 460, y: 33000, status: 'Denge' },
+                { name: 'Avcılar', x: 380, y: 29000, status: 'Denge' },
+                { name: 'Zeytinburnu', x: 390, y: 28000, status: 'Denge' },
+                { name: 'Güngören', x: 310, y: 26000, status: 'Denge' },
+                { name: 'Bayrampaşa', x: 330, y: 27000, status: 'Denge' },
+                { name: 'Eyüpsultan', x: 340, y: 25000, status: 'Denge' },
+                { name: 'Beyoğlu', x: 500, y: 32000, status: 'Denge' },
+                { name: 'Küçükçekmece', x: 410, y: 35000, status: 'Denge' },
+                { name: 'SultanGazi', x: 360, y: 34000, status: 'Denge' }
+            ];
+
+            const ctxMatrix = document.getElementById('dssScatterChart').getContext('2d');
+
+            const quadrantPlugin = {
+                id: 'quadrantBackground',
+                beforeDraw: (chart) => {
+                    const { ctx, chartArea: { top, bottom, left, right }, scales: { x, y } } = chart;
+                    const midX = x.getPixelForValue(500);
+                    const midY = y.getPixelForValue(30000);
+
+                    ctx.save();
+                    // Kriz (Top Left) - Red Tint
+                    ctx.fillStyle = 'rgba(239, 68, 68, 0.05)';
+                    ctx.fillRect(left, top, midX - left, midY - top);
+                    // Verimli (Top Right) - Green Tint
+                    ctx.fillStyle = 'rgba(34, 197, 94, 0.05)';
+                    ctx.fillRect(midX, top, right - midX, midY - top);
+                    // Düşük (Bottom Left) - Grey Tint
+                    ctx.fillStyle = 'rgba(243, 244, 246, 0.2)';
+                    ctx.fillRect(left, midY, midX - left, bottom - midY);
+                    // İsraf (Bottom Right) - Yellow Tint
+                    ctx.fillStyle = 'rgba(234, 179, 8, 0.05)';
+                    ctx.fillRect(midX, midY, right - midX, bottom - midY);
+                    ctx.restore();
+                }
+            };
+
+            const labelPlugin = {
+                id: 'pointLabels',
+                afterDatasetsDraw: (chart) => {
+                    const ctx = chart.ctx;
+                    ctx.font = 'bold 10px sans-serif';
+                    ctx.fillStyle = '#374151';
+                    ctx.textAlign = 'center';
+
+                    const meta = chart.getDatasetMeta(0);
+                    const priorityList = ['Esenyurt', 'Kadıköy', 'Bakırköy', 'Şile', 'Bağcılar', 'Şişli'];
+
+                    meta.data.forEach((point, index) => {
+                        const dataPoint = istanbulData[index];
+                        if (priorityList.includes(dataPoint.name)) {
+                            ctx.fillText(dataPoint.name, point.x, point.y - 12);
+                        }
+                    });
+                }
+            };
+
+            const scatterData = istanbulData.map(d => ({ x: d.x, y: d.y }));
+
+            // Renk Mantığı
+            const bgColors = istanbulData.map(d => {
+                if (d.status === 'Kriz') return '#dc2626';
+                if (d.status === 'Verimli') return '#16a34a';
+                if (d.status === 'İsraf') return '#eab308';
+                return '#9ca3af';
+            });
+
+            if (scatterChartInstance) scatterChartInstance.destroy();
+
+            scatterChartInstance = new Chart(ctxMatrix, {
+                type: 'scatter',
+                data: {
+                    datasets: [{
+                        label: 'İlçeler',
+                        data: scatterData,
+                        backgroundColor: bgColors,
+                        pointRadius: 6,
+                        pointHoverRadius: 8
+                    }]
+                },
+                plugins: [quadrantPlugin, labelPlugin],
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        tooltip: {
+                            callbacks: {
+                                label: function (context) {
+                                    const raw = istanbulData[context.dataIndex];
+                                    return `${raw.name}: ${raw.x} Sefer, ${raw.y.toLocaleString()} Yolcu (${raw.status})`;
+                                }
+                            }
+                        },
+                        legend: { display: false }
+                    },
+                    scales: {
+                        x: {
+                            title: { display: true, text: 'Günlük Sefer (Arz)', font: { size: 10, weight: 'bold' }, color: '#9ca3af' },
+                            min: 0, max: 1000,
+                            grid: { display: true, drawBorder: false }
+                        },
+                        y: {
+                            title: { display: true, text: 'Günlük Yolcu (Talep)', font: { size: 10, weight: 'bold' }, color: '#9ca3af' },
+                            min: 0, max: 60000,
+                            grid: { display: true, drawBorder: false }
+                        }
+                    }
+                }
+            });
+
+            // --- RADAR CHART (En İyi vs En Kötü İlçe) ---
+            const sortedData = [...data].sort((a, b) => b.efficiency - a.efficiency);
+            // --- RADAR CHART (3 FARKLI PROFİL) ---
+            // Şile: Trafik yok (Dakiklik Yüksek), ama yolcu az (Doluluk Düşük)
+            const radarData = {
+                labels: ['Finansal Verim', 'Yolcu Memnuniyeti', 'Sefer Dakikliği', 'Araç Doluluğu', 'Bakım Kalitesi'],
+                datasets: [
+                    {
+                        label: 'Kadıköy (Lider)',
+                        data: [95, 92, 88, 85, 90],
+                        borderColor: '#16a34a',
+                        backgroundColor: 'rgba(34, 197, 94, 0.2)',
+                        pointBackgroundColor: '#16a34a',
+                        pointBorderColor: '#fff',
+                        pointHoverBackgroundColor: '#fff',
+                        pointHoverBorderColor: '#16a34a'
+                    },
+                    {
+                        label: 'Şile (Stabil)',
+                        data: [60, 85, 95, 45, 80],
+                        borderColor: '#3b82f6',
+                        backgroundColor: 'rgba(59, 130, 246, 0.2)',
+                        pointBackgroundColor: '#3b82f6',
+                        pointBorderColor: '#fff',
+                        pointHoverBackgroundColor: '#fff',
+                        pointHoverBorderColor: '#3b82f6'
+                    },
+                    {
+                        label: 'Esenyurt (Kritik)',
+                        data: [35, 25, 40, 20, 50],
+                        borderColor: '#ef4444',
+                        backgroundColor: 'rgba(239, 68, 68, 0.2)',
+                        pointBackgroundColor: '#ef4444',
+                        pointBorderColor: '#fff',
+                        pointHoverBackgroundColor: '#fff',
+                        pointHoverBorderColor: '#ef4444'
+                    }
+                ]
+            };
+
+            const ctxRadar = document.getElementById('dssRadarChart').getContext('2d');
+
+            if (radarChartInstance) radarChartInstance.destroy();
+
+            radarChartInstance = new Chart(ctxRadar, {
+                type: 'radar',
+                data: radarData,
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        r: {
+                            angleLines: {
+                                color: 'rgba(0, 0, 0, 0.1)'
+                            },
+                            grid: {
+                                color: 'rgba(0, 0, 0, 0.05)'
+                            },
+                            pointLabels: {
+                                font: {
+                                    size: 10,
+                                    weight: 'bold'
+                                },
+                                color: '#6b7280'
+                            },
+                            ticks: {
+                                display: false, // Sayı kalabalığı yapmasın
+                                min: 0,
+                                max: 100,
+                                stepSize: 20
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                boxWidth: 8,
+                                font: { size: 10 },
+                                padding: 10
+                            }
+                        }
+                    }
+                }
+            });
+
+
+            // --- PASSENGER PROFILE & REVENUE IMPACT CHART ---
+            const profileData = {
+                labels: ['Tam', 'Öğrenci', 'İndirimli/Sosyal'],
+                datasets: [
+                    {
+                        label: 'Yolcu Payı (%)',
+                        data: [35, 45, 20],
+                        backgroundColor: '#9ca3af',
+                        borderRadius: 4,
+                        barPercentage: 0.6
+                    },
+                    {
+                        label: 'Gelir Katkısı (%)',
+                        data: [65, 25, 10],
+                        backgroundColor: '#10b981',
+                        borderRadius: 4,
+                        barPercentage: 0.6
+                    }
+                ]
+            };
+
+            const ctxProfile = document.getElementById('passengerProfileChart');
+            if (ctxProfile) {
+                new Chart(ctxProfile.getContext('2d'), {
+                    type: 'bar',
+                    data: profileData,
+                    options: {
+                        indexAxis: 'y', // Horizontal bars
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                position: 'bottom',
+                                labels: { font: { size: 12 }, boxWidth: 10 }
+                            },
+                            tooltip: {
+                                callbacks: {
+                                    label: function (context) {
+                                        return context.dataset.label + ': %' + context.raw;
+                                    }
+                                }
+                            }
+                        },
+                        scales: {
+                            x: {
+                                display: false, // Hide x axis numbers
+                                max: 100
+                            },
+                            y: {
+                                grid: { display: false },
+                                ticks: { font: { size: 12, weight: 'bold' } }
+                            }
+                        }
+                    }
+                });
+            }
+        }
+
+        // 4. TABLOYU DOLDUR
+        function populateAnalysisTable(data) {
+            const tbody = document.getElementById('strategicTableBody');
+            if (!tbody) return;
+            tbody.innerHTML = '';
+
+            data.forEach(d => {
+                const tr = document.createElement('tr');
+                tr.className = "hover:bg-slate-50 border-b border-slate-50 transition-all";
+                let badgeColor = d.revStatus === 'good' ? 'bg-emerald-100 text-emerald-800' :
+                    (d.revStatus === 'critical' ? 'bg-amber-100 text-amber-800' : 'bg-red-100 text-red-800');
+
+                tr.innerHTML = `
+                <td class="px-6 py-4 font-bold text-slate-700">${d.name}</td>
+                <td class="px-6 py-4">
+                    <div class="w-full bg-slate-200 rounded-full h-2.5">
+                        <div class="bg-indigo-600 h-2.5 rounded-full" style="width: ${d.efficiency}%"></div>
+                    </div>
+                    <span class="text-xs text-slate-500 font-bold">%${d.efficiency}</span>
+                </td>
+                <td class="px-6 py-4">
+                    <span class="px-2 py-1 rounded text-xs font-bold ${badgeColor}">%${d.revCoverage}</span>
+                </td>
+                <td class="px-6 py-4 text-xs font-medium text-slate-500">
+                    <i class="fas fa-lightbulb text-yellow-400 mr-1"></i> ${d.insight}
+                </td>
+                <td class="px-6 py-4 text-right">
+                     <button onclick="simulateScenario('${d.name}', ${d.efficiency}, '${d.whatIfAction}', '${d.whatIfImpact}')" class="text-xs bg-white border border-slate-300 hover:bg-slate-100 px-3 py-1 rounded-full font-bold transition-colors">
+                        ${d.whatIfAction}
+                     </button>
+                </td>
+            `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        // 5. MODAL LOGIC
+        const modal = document.getElementById('simulationModal');
+        const modalBackdrop = document.getElementById('modalBackdrop');
+        const modalPanel = document.getElementById('modalPanel');
+
+        function openModal(districtName, currentEff, action, impact, newEff) {
+            if (!modal) return;
+            document.getElementById('modalScenarioName').innerText = action;
+            document.getElementById('modalCurrentEff').innerText = '%' + currentEff;
+            document.getElementById('modalNewEff').innerText = '%' + newEff;
+            document.getElementById('modalImpactText').innerText = `Bu senaryo uygulanırsa ${districtName} bölgesinde ${impact} beklenmektedir.`;
+
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                modalBackdrop.classList.remove('opacity-0');
+                modalPanel.classList.remove('opacity-0', 'translate-y-4', 'sm:translate-y-0', 'sm:scale-95');
+                modalPanel.classList.add('opacity-100', 'translate-y-0', 'sm:scale-100');
+            }, 10);
+        }
+
+        function closeModal() {
+            if (!modal) return;
+            modalBackdrop.classList.add('opacity-0');
+            modalPanel.classList.remove('opacity-100', 'translate-y-0', 'sm:scale-100');
+            modalPanel.classList.add('opacity-0', 'translate-y-4', 'sm:translate-y-0', 'sm:scale-95');
+            setTimeout(() => { modal.classList.add('hidden'); }, 300);
+        }
+
+        function simulateScenario(districtName, currentEff, action, impact) {
+            action = action || 'Genel Optimizasyon';
+            impact = impact || '%10 Verim Artışı';
+            const newEff = Math.min(100, Math.round(currentEff * 1.15));
+            openModal(districtName, currentEff, action, impact, newEff);
+        }
+
+        function confirmAction(type) {
+            let confirmMsg = "";
+            let successMsg = "";
+            if (type === 'optimize') {
+                confirmMsg = "📉 OPTİMİZASYON ONAYI\n\nBaşakşehir Bölgesi için 'Kapasite Azaltma & Sefer Sıklığı Optimize Etme' paketi işleme alınacaktır.\n\n✅ Tahmini Yıllık Tasarruf: ₺2.4 Milyon\n✅ Filo Verimliliği Artışı: %15\n\nBu işlemi onaylıyor musunuz?";
+                successMsg = "✅ İşlem Başarılı!\nOptimization talebi operasyon birimine iletildi.";
+            } else if (type === 'invest') {
+                confirmMsg = "🚀 YATIRIM ONAYI\n\nBeykoz Bölgesi için '10 Adet Yeni Otobüs Alımı' ve 'Hat Rehabilitasyonu' bütçesi onaya sunulacaktır.\n\n💰 Toplam Yatırım: ₺15 Milyon\n📈 Hedeflenen Memnuniyet: 7.5/10\n\nBu büyük bütçeli yatırımı onaylıyor musunuz?";
+                successMsg = "✅ İşlem Başarılı!\nYatırım talebi finans departmanına ve üst yönetime iletildi.";
+            }
+            if (confirm(confirmMsg)) {
+                alert(successMsg);
+            }
+        }
+
+        // 6. FİNANSAL DETAY
+        // 6. FİNANSAL DETAY (MAIN PAGE)
+        async function loadFinancialDetails() {
+            try {
+                // Verileri Çek
+                const [resExpense, resStrategic, resTrend] = await Promise.all([
+                    fetch('/api/analysis/financial-breakdown'),
+                    fetch('/api/analysis/strategic-report'),
+                    fetch('/api/analysis/financial-trend')
+                ]);
+
+                const jsonExp = await resExpense.json();
+                const jsonStrat = await resStrategic.json();
+                const jsonTrend = await resTrend.json();
+
+                if (!jsonExp.success || !jsonStrat.success) return console.error("Finansal veri hatası!");
+
+                const expData = jsonExp.data;
+
+                // Toplam Geliri Hesapla
+                let totalRevenue = 0;
+                jsonStrat.data.forEach(d => totalRevenue += d.revenue);
+
+                // 1. ÖZET SAYILARI BAS
+                document.getElementById('mainTotalExpense').innerText = '₺' + (expData.total_expense / 1000000).toFixed(1) + 'M';
+                document.getElementById('mainTotalRevenue').innerText = '₺' + (totalRevenue / 1000000).toFixed(1) + 'M';
+
+                const net = totalRevenue - expData.total_expense;
+                const netEl = document.getElementById('mainNetResult');
+                netEl.innerText = (net >= 0 ? '+' : '') + '₺' + (net / 1000000).toFixed(1) + 'M';
+                netEl.className = `text-2xl font-black ${net >= 0 ? 'text-emerald-700' : 'text-rose-700'}`;
+
+                // 2. GRAFİK 1: GİDER PASTASI
+                renderExpenseChart(expData);
+
+
+
+                // 4. GRAFİK 3: TREND CHART (Varsa)
+                if (jsonTrend.success) {
+                    renderTrendChart(jsonTrend.data);
+                }
+
+            } catch (e) {
+                console.error(e);
+            }
+        }
+
+        let trendChart = null;
+        function renderTrendChart(data) {
+            const ctx = document.getElementById('trendAreaChart').getContext('2d');
+            if (trendChart) trendChart.destroy();
+
+            // Gradientleri Oluştur
+            const gradientRevenue = ctx.createLinearGradient(0, 0, 0, 400);
+            gradientRevenue.addColorStop(0, 'rgba(34, 197, 94, 0.5)'); // Emerald-500
+            gradientRevenue.addColorStop(1, 'rgba(34, 197, 94, 0.0)');
+
+            const gradientExpense = ctx.createLinearGradient(0, 0, 0, 400);
+            gradientExpense.addColorStop(0, 'rgba(239, 68, 68, 0.5)'); // Rose-500
+            gradientExpense.addColorStop(1, 'rgba(239, 68, 68, 0.0)');
+
+            const labels = data.map(d => d.name);
+            const revenues = data.map(d => d.Gelir);
+            const expenses = data.map(d => d.Gider);
+
+            trendChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [
+                        {
+                            label: 'Gider',
+                            data: expenses,
+                            borderColor: '#ef4444',
+                            backgroundColor: gradientExpense,
+                            fill: true,
+                            tension: 0.4,
+                            pointRadius: 4,
+                            pointBackgroundColor: '#ef4444'
+                        },
+                        {
+                            label: 'Gelir',
+                            data: revenues,
+                            borderColor: '#22c55e',
+                            backgroundColor: gradientRevenue,
+                            fill: true,
+                            tension: 0.4,
+                            pointRadius: 4,
+                            pointBackgroundColor: '#22c55e'
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    interaction: {
+                        mode: 'index',
+                        intersect: false,
+                    },
+                    plugins: {
+                        legend: { position: 'top' },
+                        tooltip: {
+                            callbacks: {
+                                label: function (context) {
+                                    return context.dataset.label + ': ₺' + context.raw.toLocaleString('tr-TR');
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            display: false, // Sayı kalabalığı yapmasın diye gizledim
+                            beginAtZero: true
+                        },
+                        x: {
+                            grid: { display: false }
+                        }
+                    }
+                }
+            });
+        }
+
+        function renderExpenseChart(data) {
+            const ctx = document.getElementById('expenseDoughnutChart').getContext('2d');
+            if (expenseChart) expenseChart.destroy();
+
+            expenseChart = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: data.items.map(i => i.label),
+                    datasets: [{
+                        data: data.items.map(i => i.value),
+                        backgroundColor: ['#3b82f6', '#10b981', '#f59e0b', '#ef4444', '#6366f1'],
+                        borderWidth: 0,
+                        hoverOffset: 10
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { position: 'bottom', labels: { usePointStyle: true, font: { size: 10 } } },
+                        tooltip: {
+                            callbacks: {
+                                label: function (context) {
+                                    let val = context.raw;
+                                    return ' ₺' + val.toLocaleString('tr-TR');
+                                }
+                            }
+                        }
+                    },
+                    cutout: '70%'
+                }
+            });
+        }
+
+
+
+        function renderBalanceChart(revenue, expense) {
+            const ctx = document.getElementById('balanceBarChart').getContext('2d');
+            if (balanceChart) balanceChart.destroy();
+
+            balanceChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Gelir (Bilet)', 'Gider (Toplam)'],
+                    datasets: [{
+                        label: 'Tutar (TL)',
+                        data: [revenue, expense],
+                        backgroundColor: ['#10b981', '#ef4444'],
+                        borderRadius: 8,
+                        barThickness: 50
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            callbacks: {
+                                label: function (context) {
+                                    return ' ₺' + context.raw.toLocaleString('tr-TR');
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            grid: { color: '#f1f5f9' },
+                            ticks: {
+                                callback: function (value) { return value / 1000000 + 'M'; }
+                            }
+                        },
+                        x: { grid: { display: false } }
+                    }
+                }
+            });
+        }
+
+
+        function initSimulator() {
+            // 1. SİMÜLATÖR DEĞİŞKENLERİ
+            const freqInput = document.getElementById('simFreqInput');
+            const priceInput = document.getElementById('simPriceInput');
+            const freqLabel = document.getElementById('simFreqLabel');
+            const priceLabel = document.getElementById('simPriceLabel');
+            const revDisplay = document.getElementById('simRevenueDisplay');
+            const satDisplay = document.getElementById('simSatDisplay');
+            const applyBtn = document.getElementById('simApplyBtn');
+
+            const BAZ_GELIR = 100000;
+            const BAZ_MEMNUNIYET = 7.0;
+
+            function updateSimulation() {
+                if (!freqInput || !priceInput) return;
+
+                const freq = parseInt(freqInput.value);
+                const price = parseInt(priceInput.value);
+
+                // Label Güncellemeleri
+                if (freqLabel) {
+                    freqLabel.innerText = (freq > 0 ? '+' : '') + freq + '%';
+                    freqLabel.className = `px-2 py-0.5 rounded border ${freq > 0 ? 'bg-emerald-900 text-emerald-200 border-emerald-700' : 'bg-rose-900 text-rose-200 border-rose-700'}`;
+                }
+
+                if (priceLabel) {
+                    priceLabel.innerText = (price > 0 ? '+' : '') + price + '%';
+                    priceLabel.className = `px-2 py-0.5 rounded border ${price > 0 ? 'bg-emerald-900 text-emerald-200 border-emerald-700' : 'bg-rose-900 text-rose-200 border-rose-700'}`;
+                }
+
+                // Hesaplama Motoru
+                const yeniGelir = BAZ_GELIR + (price * 2500) - (freq * 1500);
+                const yeniSat = BAZ_MEMNUNIYET + (freq * 0.1) - (price * 0.05);
+
+                // Sonuçları Yazdır
+                if (revDisplay) {
+                    revDisplay.innerText = '₺' + (yeniGelir / 1000).toFixed(1) + 'K';
+                    revDisplay.className = `block text-xl font-black ${yeniGelir >= BAZ_GELIR ? 'text-emerald-400' : 'text-rose-400'}`;
+                }
+
+                if (satDisplay) {
+                    satDisplay.innerText = '%' + yeniSat.toFixed(1);
+                    satDisplay.className = `block text-xl font-black ${yeniSat >= BAZ_MEMNUNIYET ? 'text-emerald-400' : 'text-amber-400'}`;
+                }
+            }
+
+            if (freqInput) freqInput.addEventListener('input', updateSimulation);
+            if (priceInput) priceInput.addEventListener('input', updateSimulation);
+
+            if (applyBtn) {
+                applyBtn.addEventListener('click', () => {
+                    const freq = freqInput.value;
+                    const price = priceInput.value;
+                    const rev = revDisplay.innerText;
+                    const sat = satDisplay.innerText;
+                    alert(`SİMÜLASYON RAPORU:\n\n-------------\nSefer Sıklığı: %${freq}\nBilet Fiyatı: %${price}\n-------------\nTAHMİNİ SONUÇ:\nGelir: ${rev}\nMemnuniyet: ${sat}\n\nBu senaryo uygulanmak üzere kaydedildi.`);
+                });
+            }
+
+            // İlk Çalıştırma
+            updateSimulation();
+
+            // 2. FİLO CHARTLARI
+            // --- FLEET EFFICIENCY CHART (PIE) ---
+            const ctxFleet = document.getElementById('fleetStatusChart');
+            if (ctxFleet) {
+                new Chart(ctxFleet.getContext('2d'), {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['Aktif Sahada', 'Bakımda', 'Arızalı'],
+                        datasets: [{
+                            data: [82, 12, 6],
+                            backgroundColor: ['#10b981', '#f59e0b', '#ef4444'],
+                            borderWidth: 0,
+                            cutout: '70%'
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: { position: 'bottom', labels: { boxWidth: 8, font: { size: 10 } } },
+                            tooltip: { callbacks: { label: (c) => ` %${c.raw}` } }
+                        }
+                    }
+                });
+            }
+
+            // --- FAILURE REASONS CHART (BAR) ---
+            const ctxFail = document.getElementById('failureReasonsChart');
+            if (ctxFail) {
+                new Chart(ctxFail.getContext('2d'), {
+                    type: 'bar',
+                    data: {
+                        labels: ['Motor/Şanzıman', 'Klima (HVAC)', 'Kapı Sistemi', 'Lastik/Yürüyen', 'Elektronik'],
+                        datasets: [{
+                            label: 'Arıza Adedi',
+                            data: [145, 98, 75, 40, 30],
+                            backgroundColor: '#6366f1',
+                            borderRadius: 4,
+                            barPercentage: 0.5
+                        }]
+                    },
+                    options: {
+                        indexAxis: 'y',
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: { legend: { display: false } },
+                        scales: {
+                            x: { display: false },
+                            y: { grid: { display: false }, ticks: { font: { size: 10, weight: 'bold' } } }
+                        }
+                    }
+                });
+            }
+        }
+
+
+
+        // Sayfa Yüklendiğinde Başlat
+        document.addEventListener('DOMContentLoaded', () => {
+            initSimulator();
+            loadDashboard();
+        });
+    </script>
+</body>
+
+</html>
