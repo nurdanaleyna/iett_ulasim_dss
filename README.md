@@ -39,6 +39,72 @@ iett_ulasim/
 └── scripts/            # Yardımcı araçlar ve veri yükleme scriptleri
 ```
 
+## 🗄️ Veritabanı Şeması (ER Diyagramı)
+
+Aşağıdaki diyagram, sistemin veritabanı yapısını ve tablolar arasındaki ilişkileri göstermektedir:
+
+```mermaid
+erDiagram
+    districts ||--o{ bus_lines : "starts/ends at"
+    districts ||--o{ financial_records : "has"
+    bus_lines ||--o{ trips : "has"
+    bus_lines ||--o{ system_recommendations : "has"
+    trips ||--|| trip_metrics : "has"
+    
+    districts {
+        INT id PK
+        VARCHAR name
+        INT population
+    }
+
+    bus_lines {
+        INT id PK
+        VARCHAR line_code
+        INT start_district_id FK
+        INT end_district_id FK
+        ENUM route_type
+    }
+
+    trips {
+        INT id PK
+        INT line_id FK
+        VARCHAR bus_plate_number
+        DATETIME departure_time
+    }
+
+    trip_metrics {
+        INT id PK
+        INT trip_id FK
+        INT passenger_count
+        INT capacity
+        INT duration_minutes
+        DECIMAL fuel_cost
+    }
+
+    system_recommendations {
+        INT id PK
+        INT line_id FK
+        TEXT decision
+        TEXT reason
+    }
+    
+    financial_records {
+        INT id PK
+        INT district_id FK
+        VARCHAR category
+        DECIMAL amount
+    }
+
+    passenger_feedbacks {
+        INT id PK
+        VARCHAR region
+        VARCHAR line_number
+        INT rating
+        TEXT comment
+    }
+```
+
+
 ## ⚙️ Kurulum ve Çalıştırma
 
 1.  **Gereksinimler:**
